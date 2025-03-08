@@ -1,0 +1,29 @@
+
+  
+  .underline-link {
+    color: #131313;
+
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .underline-link::before,
+  .underline-link.is--alt::before,
+  .underline-link.is--alt::after{
+    content: "";
+    position: absolute;
+    bottom: 0em;
+    left: 0;
+    width: 100%;
+    height: 0.0625em;
+    background-color: #131313;
+    transition: transform 0.735s cubic-bezier(0.625, 0.05, 0, 1);
+    transform-origin: right;
+    transform: scaleX(0) rotate(0.001deg);
+  }
+  
+  .underline-link:hover::before {
+    transform-origin: left;
+    transform: scaleX(1) rotate(0.001deg);
+  }
+  
