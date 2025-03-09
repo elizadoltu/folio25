@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
+import React from "react";
 import gsap from "gsap";
 import Menu from "../components/Menu";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -9,16 +9,13 @@ import Contact from "../components/Contact";
 gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
-  const firstSectionRef = useRef(null);
-  const secondSectionRef = useRef(null);
-  const containerRef = useRef(null);
 
   return (
     <div className="size-container-ideal relative">
       <Menu />
       <div className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3">
         <h1 className="font-kenoky">eliza</h1>
-        <h1 className="font-geist-semibold">doltu</h1>
+        <h1 className="font-geist-medium tracking-tighter">doltu</h1>
       </div>
       <div className="flex justify-end w-full px-3">
         <div className="flex gap-5 w-4xl uppercase">

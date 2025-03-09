@@ -131,7 +131,7 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
             className="marquee-advanced__collection"
           >
             <div className="marquee-advanced__item">
-              <p className="marquee__advanced__p font-geist-regular uppercase">
+              <p className="marquee__advanced__p font-geist-medium tracking-tighter uppercase">
                 {MARQUEE_TEXT}{" "}
               </p>
             </div>
