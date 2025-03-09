@@ -3,9 +3,24 @@ import PropTypes from "prop-types";
 import "../styles/stagger-animation.css";
 
 const AnimatedButton = ({ text, href }) => {
+  const handleClick = (e) => {
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
-    <a href={href} aria-label={text} className="w-inline-block btn-animate-chars" target="_blank">
+    <a 
+      href={href} 
+      aria-label={text} 
+      className="w-inline-block btn-animate-chars" 
+      target={href && !href.startsWith('#') ? "_blank" : undefined}
+      onClick={handleClick}
+    >
       <span data-button-animate-chars className="btn-animate-chars__text">
         {text.split("").map((char, index) => (
           <span key={`${char}-${index}`} className="btn-char" style={{ transitionDelay: `${index * 0.02}s` }}>
@@ -16,6 +31,7 @@ const AnimatedButton = ({ text, href }) => {
     </a>
   );
 };
+
 AnimatedButton.propTypes = {
   text: PropTypes.string.isRequired,
   href: PropTypes.string,

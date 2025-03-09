@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AnimatedButton from "../animations/StaggerAnimation";
-import logo from "../assets/logo.svg";
 import "../styles/underline-animation.css";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Contact = () => {
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      ".contact-image",
+      {
+        rotation: 0,
+      },
+      {
+        rotation: 360,
+        duration: 3,
+        scrollTrigger: {
+          trigger: ".contact-image",
+          start: "top 80%", 
+          end: "top 30%",   
+          scrub: true,      
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className="size-container-ideal flex justify-between mt-[20vh]">
+    <div className="size-container-ideal flex justify-between mt-[20vh] p-3">
       <div className="flex flex-col justify-between">
         <h1 className="uppercase font-kenoky text-9xl">contact</h1>
         <div className="grid grid-rows-2 grid-cols-4 uppercase font-geist-medium">
@@ -19,7 +44,7 @@ const Contact = () => {
           <p className="underline-link cursor-default">all rights reserved</p>
         </div>
       </div>
-      <img src={logo} alt="official logo website" />
+      <img src="/logo-black.svg" alt="official logo website" className="contact-image"/>
     </div>
   );
 };

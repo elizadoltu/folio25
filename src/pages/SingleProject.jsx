@@ -4,6 +4,9 @@ import projectsData from "../data/projects";
 import "../styles/button-bubble.css";
 import Contact from "../components/Contact";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function SingleProject() {
   const { projectLink } = useParams();
@@ -14,7 +17,25 @@ function SingleProject() {
   const imageRefs = useRef([]);
   const nextProjectImageRef = useRef(null);
   const parentRef = useRef(null);
+  const titleRef = useRef(null);
 
+  useEffect(() => {
+    if (!titleRef.current) return;
+
+    const h1Elements = titleRef.current.querySelectorAll("h1");
+
+    gsap.to(h1Elements, {
+      fontSize: "2rem", 
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top top",
+        end: "top+=1000px top",
+        scrub: true,
+      },
+    });
+  }, []);
+  
   useEffect(() => {
     if (parentRef.current && nextProjectImageRef.current) {
       const handleMouseEnter = () => {
@@ -69,7 +90,7 @@ function SingleProject() {
 
     return () => {
       imageRefs.current.forEach((imgRef) => {
-        if (imgRef && imgRef.handlers) {
+        if (imgRef?.handlers) {
           imgRef.removeEventListener("mouseenter", imgRef.handlers.enter);
           imgRef.removeEventListener("mouseleave", imgRef.handlers.leave);
         }
@@ -85,16 +106,17 @@ function SingleProject() {
   const nextProject = projectsData[(currentIndex + 1) % projectsData.length];
 
   return (
-    <div className="size-container-ideal">
-      <div className="flex justify-between uppercase border-b-gray-400 border-b-1 leading-none">
-        <h1 className="text-11xl font-kenoky">{project.projectFirstName}</h1>
-        <h1 className="text-11xl font-geist-semibold">
-          {project?.projectSecondName}
-        </h1>
-      </div>
-      <div className="flex justify-between uppercase mt-5">
+    <div className="size-container-ideal relative p-3">
+      <div
+    ref={titleRef}
+    className="fixed top-0 left-0 z-50 w-full flex justify-between uppercase leading-none mt-2 p-2"
+  >
+    <h1 className="text-11xl font-kenoky">{project.projectFirstName}</h1>
+    <h1 className="text-11xl font-geist-semibold">{project.projectSecondName}</h1>
+  </div>
+      <div className="flex justify-between uppercase p-2">
         <p className="font-geist-semibold">{project.projectDate}</p>
-        <div className="w-2xl text-base">
+        <div className="w-2xl text-base mt-[26vh]">
           <p>{project.projectFirstParagraph}</p>
           <p className="mt-5">{project.projectSecondParagraph}</p>
         </div>
@@ -102,7 +124,7 @@ function SingleProject() {
       <img
         src={project.mainPhoto}
         alt={project.projectFirstName}
-        className="mt-30 w-full"
+        className="mt-12 w-full"
       />
       <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex justify-between">
         <p className="uppercase font-geist-medium">technologies used</p>
@@ -119,7 +141,7 @@ function SingleProject() {
           ) : (
             <div>
               <p className="font-geist-medium">design</p>
-              <p className="mt-1">{project["design"]}</p>
+              <p className="mt-1">{project?.design}</p>
             </div>
           )}
           {project?.database ? (
@@ -130,7 +152,7 @@ function SingleProject() {
           ) : (
             <div>
               <p className="font-geist-medium">animations & scrolling</p>
-              <p className="mt-1">{project["animations&scrolling"]}</p>
+              <p className="mt-1">{project?.["animations&scrolling"]}</p>
             </div>
           )}
           <div>
@@ -203,7 +225,7 @@ function SingleProject() {
           href={`${nextProject.projectLink}`}
           className="btn-bubble-arrow w-inline-block"
         >
-          <div className="btn-bubble-arrow__arrow">
+          <div className="btn-bubble-arrow__arrow" style={{ backgroundColor: project.color }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

@@ -27,6 +27,7 @@
   --font-geist-medium: 'Geist-Medium';
   --font-kenoky: 'KenokyLight';
   --text-11xl: 15rem;
+  --text-12xl: 18rem;
 }
 
 body {
@@ -37,7 +38,6 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  padding: 10px;
 }
 
 ::selection {

@@ -45,7 +45,8 @@ const projectsData = [
       "mainPhoto": mainBooking,
       "photos" : [
         booking1, booking2, booking3, booking4, booking5, booking6
-      ]
+      ],
+      color: "#ff4c2f"
     },
     {
       "projectFirstName": "Realio",
@@ -61,7 +62,8 @@ const projectsData = [
       "mainPhoto": mainRealio,
       "photos" : [
         realio1, realio2, realio3, realio4, realio5, realio6
-      ]
+      ],
+      color: "#00538a"
     },
     {
       "projectFirstName": "Mewoseum",
@@ -76,7 +78,8 @@ const projectsData = [
       "mainPhoto": mainMeowseum,
       "photos" : [
         meowseumn1, meowseumn2, meowseumn3, meowseumn4, meowseumn5, meowseumn6
-      ]
+      ],
+      color: "#2A004E"
     },
     {
       "projectFirstName": "Portfolio",
@@ -92,7 +95,8 @@ const projectsData = [
       "mainPhoto": mainPortfolio,
       "photos" : [
         portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6
-      ]
+      ],
+      color: "#578E7E"
     }
   ]
 
