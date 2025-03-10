@@ -24,8 +24,8 @@ const Work = () => {
       easing: "easeInOutQuad",
     },
     text: {
-      translateY: [-40, 80], 
-      speed: 4,
+      translateY: [-40, 70], 
+      speed: 2,
       easing: "easeInOutQuad"
     }
   };

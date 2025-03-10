@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import Menu from "../components/Menu";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -7,7 +7,7 @@ import About from "../components/About";
 import Work from "../components/Work";
 import DynamicCursor from "../utils/DynamicCursor";
 import PageTransition from "../animations/Transition";
-import Contact from "../components/Contact";
+import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +18,76 @@ function Main() {
     setIsTransitioning(false);
   };
 
+  const paragraphsRef = useRef([]);
+  const titleRef = useRef();
+
+  const addToParagraphsRefs = (el) => {
+    if (el && !paragraphsRef.current.includes(el)) {
+      paragraphsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const revertFunctions = [];
+
+    paragraphsRef.current.forEach((element) => {
+      if (!element) return;
+
+      const splitText = new SplitType(element, {
+        types: "lines",
+      });
+
+      if (splitText.lines && splitText.lines.length > 0) {
+        gsap.from(splitText.lines, {
+          opacity: 0,
+          y: 50,
+          duration: 0.6,
+          stagger: 0.1,
+          delay: 1.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 100%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+
+      revertFunctions.push(() => splitText.revert());
+    });
+
+    return () => {
+      revertFunctions.forEach((revert) => revert());
+      paragraphsRef.current = [];
+    };
+  }, []);
+  
+  useEffect(() => {
+    if (!titleRef.current) return;
+
+    const splitText = new SplitType(titleRef.current, {
+      types: "words"
+    });
+
+    if (splitText.words.length > 0) {
+      gsap.from(splitText.words, {
+        opacity: 0,
+        y: 100, 
+        duration: 0.5,
+        stagger: 0.12,
+        delay: 1.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+
+    return () => splitText.revert();
+  }, []);
+
   return (
     <>
       <PageTransition
@@ -27,22 +97,22 @@ function Main() {
       <div className="size-container-ideal relative">
         <DynamicCursor />
         <Menu />
-        <div className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3">
-          <h1 className="font-kenoky">eliza</h1>
-          <div>
-            <h1 className="font-geist-medium tracking-tighter">doltu</h1>
-          </div>
+        <div className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3" ref={titleRef} >
+          <h1 className="font-kenoky"  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>eliza</h1>
+       
+            <h1 className="font-geist-medium tracking-tighter" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>doltu</h1>
+       
         </div>
         <div className="flex justify-end w-full px-3">
           <div className="flex gap-2 w-[50rem] font-geist-medium">
-            <p className="text-sm">
+            <p className="text-sm w-7xl" ref={addToParagraphsRefs}>
               Hi, my name is Eliza, and creativity drives everything I do. As a
               web developer and designer, I see websites as more than just
               functional spaces—they’re immersive experiences shaped by visuals,
               typography, and motion. I love blending design and technology to
               bring ideas to life.
             </p>
-            <p className="text-sm">
+            <p className="text-sm w-7xl" ref={addToParagraphsRefs}>
               I’m currently studying Computer Science at Alexandru Ioan Cuza
               University, constantly improving my technical skills and
               problem-solving abilities. Beyond coding, I’ve always been
@@ -58,7 +128,7 @@ function Main() {
               alt="logo of the website"
               className="w-30 h-30"
             />
-            <p className="mt-5 text-sm font-geist-medium">
+            <p className="mt-5 text-sm font-geist-medium" ref={addToParagraphsRefs}>
               For me, web development is an art where logic and creativity meet.
               I enjoy crafting sleek interfaces, dynamic interactions, and
               intuitive designs that not only look good but feel seamless and

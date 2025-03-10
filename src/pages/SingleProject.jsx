@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import DynamicCursor from "../utils/DynamicCursor";
 import PageTransition from "../animations/Transition";
 import "../styles/reveal-animation.css";
-
+import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,6 +25,43 @@ function SingleProject() {
   const nextProjectImageRef = useRef(null);
   const parentRef = useRef(null);
   const titleRef = useRef(null);
+  const projectTitle = useRef(null);
+
+  const mergeRefs = (...refs) => (el) => {
+    refs.forEach((ref) => {
+      if (typeof ref === "function") {
+        ref(el);
+      } else if (ref && typeof ref === "object") {
+        ref.current = el;
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (!projectTitle.current) return;
+
+    const splitText = new SplitType(projectTitle.current, {
+      types: "words"
+    });
+
+    if (splitText.words.length > 0) {
+      gsap.from(splitText.words, {
+        opacity: 0,
+        y: 100, 
+        duration: 0.5,
+        stagger: 0.12,
+        delay: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: projectTitle.current,
+          start: "top 90%",
+          toggleActions: "play none none none"
+        }
+      });
+    }
+
+    return () => splitText.revert();
+  }, []);
 
   const handleTransitionComplete = () => {
     setIsTransitioning(false);
@@ -194,19 +231,19 @@ function SingleProject() {
           <DynamicCursor />
           <div className="text-base uppercase leading-none fixed left-1/2 -translate-x-1/2 z-50">
             <a href="/" className="cursor-pointer">
-              <h1 className="font-geist-medium" data-cursor="Home">
+              <h1 className="font-geist-medium" data-cursor="Home" >
                 <span className="font-kenoky">eliza</span> doltu
               </h1>
             </a>
           </div>
           <div
-            ref={titleRef}
+            ref={mergeRefs(titleRef, projectTitle)}
             className="fixed top-0 left-0 z-40 w-full flex justify-between uppercase leading-none p-2"
           >
-            <h1 className="text-11xl font-kenoky">
+            <h1 className="text-11xl font-kenoky" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
               {project.projectFirstName}
             </h1>
-            <h1 className="text-11xl font-geist-semibold">
+            <h1 className="text-11xl font-geist-semibold" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
               {project.projectSecondName}
             </h1>
           </div>
