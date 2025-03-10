@@ -14,6 +14,48 @@ const Work = () => {
   const imageRefs = useRef([]);
   const textFeaturedWorkRef = useRef(null);
   const imageContainers = useRef([]);
+    const paragraphsRef = useRef([]);
+  
+    const addToParagraphsRefs = (el) => {
+      if (el && !paragraphsRef.current.includes(el)) {
+        paragraphsRef.current.push(el);
+      }
+    };
+
+    useEffect(() => {
+      const revertFunctions = [];
+      
+      paragraphsRef.current.forEach((element) => {
+        if (!element) return;
+        
+        const splitText = new SplitType(element, {
+          types: "words"
+        });
+        
+        if (splitText.words && splitText.words.length > 0) {
+          gsap.from(splitText.words, {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            stagger: 0.1,
+            delay: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+          });
+        }
+        
+        revertFunctions.push(() => splitText.revert());
+      });
+      
+      return () => {
+        revertFunctions.forEach(revert => revert());
+        paragraphsRef.current = [];
+      };
+    }, []);
 
   useEffect(() => {
     if (!textFeaturedWorkRef.current) return;
@@ -130,6 +172,68 @@ const Work = () => {
       <h1 className="text-11xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex" ref={textFeaturedWorkRef} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
         <span className="font-kenoky">featured</span> work
       </h1>
+      <div className="grid grid-cols-2 gap-3 mt-20 text-sm uppercase font-geist-medium">
+        <div className="flex flex-col flex-1 flex-wrap">
+          <p>01</p>
+          
+          <div className="flex justify-between" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+            <p ref={addToParagraphsRefs}>booking iasi</p>
+            <div className="text-right leading-none mt-1" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+              <p ref={addToParagraphsRefs}>location booking</p>
+              <p ref={addToParagraphsRefs}>3d visualization</p>
+              <p ref={addToParagraphsRefs}>secure system</p>
+              <p ref={addToParagraphsRefs}>user profiles</p>
+              <p ref={addToParagraphsRefs}>3d interactive booking for modern spaces</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col flex-1 flex-wrap" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <p>02</p>
+
+          <div className="flex justify-between" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+            <p ref={addToParagraphsRefs}>realio - real estate</p>
+            <div className="text-right leading-none mt-1" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+              <p ref={addToParagraphsRefs}>real estate management</p>
+              <p ref={addToParagraphsRefs}>property listings</p>
+              <p ref={addToParagraphsRefs}>client inquiries</p>
+              <p ref={addToParagraphsRefs}>market trend prediction</p>
+              <p ref={addToParagraphsRefs}>machine learning</p>
+              <p ref={addToParagraphsRefs}>smart, simple and predictive real estate</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>03</p>
+          
+
+          <div className="flex justify-between" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+            <p ref={addToParagraphsRefs}>meowseum</p>
+            <div className="text-right leading-none mt-1" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+              <p ref={addToParagraphsRefs}>online gallery</p>
+              <p ref={addToParagraphsRefs}>cat community</p>
+              <p ref={addToParagraphsRefs}>cat photo sharing</p>
+              <p ref={addToParagraphsRefs}>community engagement</p>
+              <p ref={addToParagraphsRefs}>join the world's biggest cat gallery</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col flex-1 flex-wrap uppercase text-sm font-geist-medium" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+        <p>04</p>
+        
+
+        <div className="flex justify-between" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <p ref={addToParagraphsRefs}>portfolio 24'</p>
+          <div className="text-right leading-none mt-1" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+            <p ref={addToParagraphsRefs}>gsap animations</p>
+            <p ref={addToParagraphsRefs}>lenis scroll</p>
+            <p ref={addToParagraphsRefs}>seo optimization</p>
+            <p ref={addToParagraphsRefs}>responsive design</p>
+            <p ref={addToParagraphsRefs}>parallax effects</p>
+            <p ref={addToParagraphsRefs}>a blend of design and functionality</p>
+          </div>
+        </div>
+      </div>
+      </div>
       <div className="grid grid-cols-2 gap-3 mt-20 text-sm uppercase font-geist-medium">
         <div className="flex flex-col flex-1 flex-wrap">
           <p>01</p>

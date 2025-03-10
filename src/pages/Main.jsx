@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import Menu from "../components/Menu";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -7,12 +7,24 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Work from "../components/Work";
 import DynamicCursor from "../utils/DynamicCursor";
+import PageTransition from "../animations/Transition";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
 
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const handleTransitionComplete = () => {
+    setIsTransitioning(false);
+  };
+  
   return (
+    <>
+    <PageTransition
+        isActive={isTransitioning}
+        onComplete={handleTransitionComplete}
+      />
     <div className="size-container-ideal relative">
       <DynamicCursor />
       <Menu />
@@ -67,6 +79,7 @@ function Main() {
       </div>
       <Contact />
     </div>
+    </>
   );
 }
 
