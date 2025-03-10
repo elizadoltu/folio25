@@ -5,6 +5,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import MarqueeScrollDirection from "../components/MarqueeDirection";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Work from "../components/Work";
+import DynamicCursor from "../utils/DynamicCursor";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,13 +14,17 @@ function Main() {
 
   return (
     <div className="size-container-ideal relative">
+      <DynamicCursor />
       <Menu />
       <div className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3">
         <h1 className="font-kenoky">eliza</h1>
-        <h1 className="font-geist-medium tracking-tighter">doltu</h1>
+        <div>
+          <h1 className="font-geist-medium tracking-tighter">doltu</h1>
+        </div>
+        
       </div>
       <div className="flex justify-end w-full px-3">
-        <div className="flex gap-5 w-4xl uppercase">
+        <div className="flex gap-2 w-[50rem] font-geist-medium">
           <p className="text-sm">
             Hi, my name is Eliza, and creativity drives everything I do. As a
             web developer and designer, I see websites as more than just
@@ -35,14 +41,14 @@ function Main() {
           </p>
         </div>
       </div>
-      <div className="mt-[20vh] p-3 flex justify-between items-end">
+      <div className="mt-[22vh] p-5 flex justify-between items-end">
         <div className="w-96">
           <img
           src="/logo-black.svg"
           alt="logo of the website"
           className="w-30 h-30"
         />
-        <p className="mt-5 text-sm uppercase">
+        <p className="mt-5 text-sm font-geist-medium">
           For me, web development is an art where logic and creativity meet. I
           enjoy crafting sleek interfaces, dynamic interactions, and intuitive
           designs that not only look good but feel seamless and engaging.
@@ -57,6 +63,7 @@ function Main() {
             <MarqueeScrollDirection direction="right" />
           </div>
           <About />
+          <Work />
       </div>
       <Contact />
     </div>

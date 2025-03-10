@@ -67,6 +67,7 @@ const projectsData = [
     },
     {
       "projectFirstName": "Mewoseum",
+      "projectSecondName": 'App',
       "projectDate": "January - February 2025",
       "projectFirstParagraph": "Meowseum is the ultimate online platform for cat lovers, dedicated to building the world's largest digital cat gallery. Users can upload, share, and explore a growing collection of adorable and funny feline photos, giving every cat its moment in the spotlight.",
       "projectSecondParagraph": "Powered by React.js, Vite, GSAP, and Tailwind CSS, Meowseum offers a seamless and visually stunning experience. With smooth animations, responsive design, and an intuitive interface, it’s the perfect space for cat enthusiasts to connect and celebrate their love for felines.",
