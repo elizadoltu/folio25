@@ -8,6 +8,7 @@ import SingleProject from "./pages/SingleProject";
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,12 +33,14 @@ function App () {
   }, []);
 
   return (
+    <ParallaxProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/projects/:projectLink" element={<SingleProject />} />
       </Routes>
     </Router>
+    </ParallaxProvider>
   );
 }
 

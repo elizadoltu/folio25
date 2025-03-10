@@ -7,12 +7,16 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import DynamicCursor from "../utils/DynamicCursor";
 import PageTransition from "../animations/Transition";
+import "../styles/reveal-animation.css";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 function SingleProject() {
   const { projectLink } = useParams();
   const [isTransitioning, setIsTransitioning] = useState(true);
+    const imageContainers = useRef([]);
+  
 
   const project = projectsData.find(
     (project) => project.projectLink === projectLink
@@ -25,6 +29,48 @@ function SingleProject() {
   const handleTransitionComplete = () => {
     setIsTransitioning(false);
   };
+
+  const addToContainers = (el) => {
+    if (el && !imageContainers.current.includes(el)) {
+      imageContainers.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    imageContainers.current.forEach((container) => {
+      if (!container) return;
+      const overlay = container.querySelector(".reveal-overlay");
+      const image = container.querySelector("img");
+      if (!overlay || !image) return;
+
+      gsap.set(container, { autoAlpha: 1 });
+      gsap.set(overlay, { scaleY: 1, transformOrigin: "top" });
+
+      if (!image.hasAttribute("data-parallax")) {
+        gsap.set(image, { scale: 1.05 });
+      }
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+          pinSpacing: false, 
+        },
+      });
+
+      tl.to(overlay, { scaleY: 0, duration: 0.8, ease: "power3.inOut", delay: 0.1 }).to(
+        image,
+        {
+          scale: image.hasAttribute("data-parallax") ? 1.05 : 1,
+          duration: 1.2,
+          ease: "power2.out",
+          delay: -0.6,
+        }
+      );
+    });
+  }, []);
 
   useEffect(() => {
     if (project) {
@@ -217,8 +263,11 @@ function SingleProject() {
               project.photos.map((photo, index) => (
                 <div
                   key={photo}
-                  className="overflow-hidden h-full w-full aspect-square"
+                  className="overflow-hidden h-full w-full aspect-square reveal"
+                  ref={addToContainers}
                 >
+                  <div className="reveal-overlay absolute top-0 left-0 w-full h-full bg-black z-10"></div>
+
                   <img
                     src={photo}
                     alt={`${index + 1}`}

@@ -20,7 +20,5 @@
     will-change: transform;  /* Optimize image scaling */
     transform-origin: center center;
     display: block;  /* Remove any potential spacing issues */
-    width: 100%;
-    height: auto;
   }
   

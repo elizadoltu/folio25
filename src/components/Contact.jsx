@@ -3,14 +3,14 @@ import AnimatedButton from "../animations/StaggerAnimation";
 import "../styles/underline-animation.css";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useLocation } from "react-router-dom";
+
 gsap.registerPlugin(ScrollTrigger);
 
-
 const Contact = () => {
+  const location = useLocation();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     gsap.fromTo(
       ".contact-image",
       {
@@ -29,6 +29,8 @@ const Contact = () => {
     );
   }, []);
 
+  const logoSrc = location.pathname === "/" ? "/logo-white.svg" : "/logo-black.svg";
+
   return (
     <div className="size-container-ideal flex justify-between mt-[20vh] p-3">
       <div className="flex flex-col justify-between">
@@ -44,7 +46,7 @@ const Contact = () => {
           <p className="underline-link cursor-default">all rights reserved</p>
         </div>
       </div>
-      <img src="/logo-black.svg" alt="official logo website" className="contact-image"/>
+      <img src={logoSrc} alt="official logo website" className="contact-image"/>
     </div>
   );
 };
