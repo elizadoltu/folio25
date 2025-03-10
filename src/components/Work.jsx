@@ -3,6 +3,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import "../styles/reveal-animation.css";
+import realioImage from "../data/images/realio-app/main.png";
+import bookingImage from "../data/images/booking-iasi/main.png";
+import portfolioImage from "../data/images/portfolio-24/main.png";
+import meowseumImage from "../data/images/meowseum/main.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +137,7 @@ const Work = () => {
             <div className="reveal-overlay absolute top-0 left-0 w-full h-full bg-black z-10"></div>
             <a href="projects/booking-iasi" className="cursor-pointer">
               <img
-                src="/src/data/images/booking-iasi/main.png"
+                src={bookingImage}
                 alt=""
                 ref={addToRefs}
                 data-cursor="More details for Booking Iasi"
@@ -155,7 +159,7 @@ const Work = () => {
             <div className="reveal-overlay absolute top-0 left-0 w-full h-full bg-black z-10"></div>
             <a href="projects/realio-app" className="cursor-pointer">
               <img
-                src="/src/data/images/realio-app/main.png"
+                src={realioImage}
                 alt=""
                 ref={addToRefs}
                 data-cursor="More details for Realio"
@@ -177,7 +181,7 @@ const Work = () => {
             <div className="reveal-overlay absolute top-0 left-0 w-full h-full bg-black z-10"></div>
             <a href="projects/meowseum">
               <img
-                src="/src/data/images/meowseum/main.png"
+                src={meowseumImage}
                 alt=""
                 ref={addToRefs}
                 data-cursor="More details for Meowseum"
@@ -200,7 +204,7 @@ const Work = () => {
           <div className="reveal-overlay absolute top-0 left-0 w-full h-full bg-black z-10"></div>
           <a href="projects/portfolio-24">
             <img
-              src="/src/data/images/portfolio-24/main.png"
+              src={portfolioImage}
               alt=""
               className="w-full object-cover"
               ref={addToRefs}
