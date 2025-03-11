@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const imageAnimationRevealRef = useRef(null);
 
   const handleTransitionComplete = () => {
     setIsTransitioning(false);
@@ -26,6 +27,44 @@ function Main() {
       paragraphsRef.current.push(el);
     }
   };
+
+  useEffect(() => {
+    gsap.fromTo(
+      imageAnimationRevealRef.current,
+      {
+        clipPath: "inset(0 100% 0 0)"
+      },
+      {
+        clipPath: "inset(0 0 0 0)",
+        duration: 0.5,
+        delay: 1.4,
+        ease: "power4.inOut",
+        scrollTrigger: {
+          trigger: imageAnimationRevealRef.current, 
+          start: "top 90%",
+          toggleActions: "play none none none",
+          once: true
+        }
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".logo-image",
+      {
+        rotation: 0,
+      },
+      {
+        rotation: 360,
+        duration: 2.5,
+        scrollTrigger: {
+          trigger: ".logo-image",
+          start: "top 80%", 
+        },
+      }
+    );
+  }, []);
 
   useEffect(() => {
     const revertFunctions = [];
@@ -126,7 +165,7 @@ function Main() {
             <img
               src="/logo-black.svg"
               alt="logo of the website"
-              className="w-30 h-30"
+              className="w-30 h-30 logo-image"
             />
             <p className="mt-5 text-sm font-geist-medium" ref={addToParagraphsRefs}>
               For me, web development is an art where logic and creativity meet.
@@ -135,7 +174,12 @@ function Main() {
               engaging.
             </p>
           </div>
-          <img src="/profile-1.svg" alt="eliza teodora doltu" />
+          <img src="/profile-1.svg" alt="eliza teodora doltu" 
+          ref={imageAnimationRevealRef}
+          style={{
+            clipPath: "inset(0 100% 0 0)",
+          transition: "clip-path 0.3s ease-out",
+          }}/>
         </div>
         <div className="size-container-ideal">
           <div className="mt-[20vh]">

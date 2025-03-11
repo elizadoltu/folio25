@@ -29,10 +29,10 @@ const Contact = () => {
     );
   }, []);
 
-  const logoSrc = location.pathname === "/" ? "/logo-white.svg" : "/logo-black.svg";
+  const logoSrc =  "/logo-white.svg" ;
 
   return (
-    <div className="size-container-ideal flex justify-between mt-[20vh] p-3">
+    <div className="size-container-ideal flex justify-between mt-[20vh] p-3 text-[#e2e1df]">
       <div className="flex flex-col justify-between">
         <h1 className="uppercase font-kenoky text-9xl">contact</h1>
         <div className="grid grid-rows-2 grid-cols-4 uppercase font-geist-medium">

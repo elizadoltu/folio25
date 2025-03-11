@@ -18,7 +18,7 @@
   }
   
   .btn-bubble-arrow__arrow {
-    color: #e2e1df;
+    color: #131313;
     border-radius: 4em;
     flex-flow: row;
     justify-content: center;
@@ -34,7 +34,7 @@
   
   .btn-bubble-arrow__arrow.is--duplicate {
     z-index: 2;
-    background-color: #131313;
+    background-color: #e2e1df;
     position: absolute;
     right: 0;
   }
@@ -49,6 +49,8 @@
     position: absolute;
     z-index: 2;
     right: 0;
+    border-color: #e2e1df;
+    border: 1px;
     transform: scale(1) rotate(0.001deg);
     transform-origin: right;
   }
@@ -58,7 +60,7 @@
     background-color: #919191;
     border-radius: 8em;
     border:1px;
-    border-color: #131313;
+    border-color: #e2e1df;
     justify-content: center;
     align-items: center;
     height: 3em;

@@ -10,6 +10,13 @@ const About = () => {
   const imageRefs = useRef([]);
   const keyWordsRef = useRef([]);
   const paragraphsRef = useRef([]);
+  const imageAnimationRevealRef = useRef([]);
+  
+  const addToAnimationReveal = (el) => {
+    if (el && !imageAnimationRevealRef.current.includes(el)) {
+      imageAnimationRevealRef.current.push(el);
+    }
+  };
 
   const addToKeyRefs = (el) => {
     if (el && !keyWordsRef.current.includes(el)) {
@@ -21,6 +28,39 @@ const About = () => {
     if (el && !paragraphsRef.current.includes(el)) {
       paragraphsRef.current.push(el);
     }
+  };
+
+  useEffect(() => {
+    imageAnimationRevealRef.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        {
+          clipPath: "inset(0 100% 0 0)"
+        },
+        {
+          clipPath: "inset(0 0 0 0)",
+          duration: 0.5,
+          delay: 0.5,
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: el, 
+            start: "top 90%",
+            toggleActions: "play none none none",
+            once: true
+          }
+        }
+      );
+    })
+  }, []);
+
+  const mergeRefs = (...refs) => (el) => {
+    refs.forEach((ref) => {
+      if (typeof ref === "function") {
+        ref(el);
+      } else if (ref && typeof ref === "object") {
+        ref.current = el;
+      }
+    });
   };
 
   useEffect(() => {
@@ -150,22 +190,30 @@ const About = () => {
       <div className="grid grid-cols-2 w-full gap-5 mt-[10vh]">
         <div className="flex items-stretch overflow-hidden">
           <img
-          ref={addToRefs}
+          ref={mergeRefs(addToRefs, addToAnimationReveal)}
             src="/profile-3.svg"
             alt="eliza teodora doltu skiing"
             className="w-full h-[500px] object-cover"
             data-cursor="Who doesn't love skiing?"
+            style={{
+              clipPath: "inset(0 100% 0 0)",
+            transition: "clip-path 0.3s ease-out",
+            }}
           />
         </div>
 
         <div className="flex flex-col items-stretch font-geist-medium">
           <div className="flex overflow-hidden">
             <img
-            ref={addToRefs}
+            ref={mergeRefs(addToRefs, addToAnimationReveal)}
               src="/profile-2.svg"
               alt="eliza - teodora doltu"
               className="w-full h-[500px] object-cover"
               data-cursor="James Bond style"
+              style={{
+                clipPath: "inset(0 100% 0 0)",
+              transition: "clip-path 0.5s ease-out",
+              }}
             />
           </div>
           <h1 className="tracking-tighter uppercase font-geist-medium text-9xl" ref={addToKeyRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}><span className="font-kenoky">who</span> am i?</h1>

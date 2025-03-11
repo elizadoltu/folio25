@@ -46,7 +46,11 @@ const projectsData = [
       "photos" : [
         booking1, booking2, booking3, booking4, booking5, booking6
       ],
-      color: "#ff4c2f"
+      color: "#ff4c2f",
+      design: "Figma",
+      linkDesign: "https://www.figma.com/design/dQbhAKhZoPeAJJ9U2W6lzW/IP?node-id=0-1&t=hsEHdJ6v6qCQbWWd-1",
+      code: "Github",
+      linkCode: "https://github.com/vladsuper5555/BookingIasi"
     },
     {
       "projectFirstName": "Realio",
@@ -63,7 +67,11 @@ const projectsData = [
       "photos" : [
         realio1, realio2, realio3, realio4, realio5, realio6
       ],
-      color: "#00538a"
+      color: "#00538a",
+      design: "Figma",
+      linkDesign: "https://www.figma.com/design/CcpX9vAb0Bcfla0Y2pgcWG/Real-Estate-Management-App?node-id=0-1&t=437GkMT5UTAGGixb-1",
+      code: "Github",
+      linkCode: "https://github.com/elizadoltu/realio-real-estate-platform"
     },
     {
       "projectFirstName": "Mewoseum",
@@ -80,7 +88,11 @@ const projectsData = [
       "photos" : [
         meowseumn1, meowseumn2, meowseumn3, meowseumn4, meowseumn5, meowseumn6
       ],
-      color: "#2A004E"
+      color: "#FFB200",
+      design: "Live",
+      linkDesign: "https://www.themeowseum.com",
+      code: "Github",
+      linkCode: "https://github.com/elizadoltu/meowseum"
     },
     {
       "projectFirstName": "Portfolio",
@@ -97,7 +109,11 @@ const projectsData = [
       "photos" : [
         portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6
       ],
-      color: "#578E7E"
+      color: "#578E7E",
+      liveAt: 'live',
+      linkDesign: "https://cerulean-rugelach-60baac.netlify.app/",
+      code: "Github",
+      linkCode: "https://github.com/elizadoltu/portfolio"
     }
   ]
 
