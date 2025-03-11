@@ -256,7 +256,7 @@ const AvailableAt = () => {
             </div>
             <div
               ref={addToParentRef}
-              data-cursor={`see the code ${project?.liveAt || project.design}`}
+              data-cursor={`see the ${project?.liveAt || project.design} version`}
             >
               <a href={project.linkDesign} target="_blank">
                 <div className="-mt-10 p-5 relative h-[80vh]">
