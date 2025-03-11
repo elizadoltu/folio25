@@ -194,13 +194,13 @@ const AvailableAt = () => {
       <div className="size-container-ideal bg-[#131313] text-[#e2e1df]">
         <div className="grid grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium p-3">
           <div className="flex flex-col flex-1 flex-wrap">
-            <p>01</p>
+            <p className="text-[#FF4C2F] leading-none">01</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>{project.design}</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">{project.design}</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -219,13 +219,13 @@ const AvailableAt = () => {
             className="flex flex-col flex-1 flex-wrap"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
-            <p>02</p>
+            <p className="text-[#FF4C2F] leading-none">02</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>{project.code}</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">{project.code}</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -338,7 +338,51 @@ const AvailableAt = () => {
             </div>
           </div>
         </div>
+        <div className="next-project--container p-3">
+            <div className="mt-20 flex justify-between">
+              <img src="/rectangle.png" alt="a corner of a div" />
+              <img
+                src="/rectangle.png"
+                alt="a corner of a div"
+                className="rotate-90"
+              />
+            </div>
+            <div
+              ref={addToParentRef}
+              data-cursor={`next project ${nextProject.projectFirstName} ${nextProject.projectSecondName}`}
+            >
+             
+                <div className="-mt-10 p-5 relative h-[80vh]">
+                  <div className="w-full h-full overflow-hidden">
+                    <img
+                      ref={addToNextProjectRef}
+                      src={nextProject.mainPhoto}
+                      alt={nextProject.projectFirstName}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
+                  <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
+                    <p>&#40;next project&#41;</p>
+                    <h1 className="font-kenoky text-9xl">{nextProject.projectFirstName}</h1>
+                  </div>
+                </div>
+              
+            </div>
 
+            <div className="-mt-10 flex justify-between">
+              <img
+                src="/rectangle.png"
+                alt="a corner of a div"
+                className="-rotate-90"
+              />
+              <img
+                src="/rectangle.png"
+                alt="a corner of a div"
+                className="rotate-180"
+              />
+            </div>
+          </div>
         <div className="btn-group mt-[10vh]">
           <a
             href={`${nextProject.projectLink}`}

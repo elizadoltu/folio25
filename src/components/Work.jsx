@@ -208,13 +208,13 @@ const Work = () => {
       <div ref={image} className="bg-[#131313] text-[#E2E1DF] px-5 pb-5 overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
         <div className="grid grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium">
           <div className="flex flex-col flex-1 flex-wrap">
-            <p>01</p>
+            <p className="text-[#FF4C2F] leading-none">01</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>booking iasi</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">booking iasi</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -233,13 +233,13 @@ const Work = () => {
             className="flex flex-col flex-1 flex-wrap"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
-            <p>02</p>
+            <p className="text-[#FF4C2F] leading-none">02</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>realio - real estate</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">realio - real estate</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -256,13 +256,13 @@ const Work = () => {
             </div>
           </div>
           <div>
-            <p>03</p>
+            <p className="text-[#FF4C2F] leading-none">03</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>meowseum</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">meowseum</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -281,13 +281,13 @@ const Work = () => {
             className="flex flex-col flex-1 flex-wrap uppercase text-sm font-geist-medium"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
-            <p>04</p>
+            <p className="text-[#FF4C2F] leading-none">04</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs}>portfolio 24'</p>
+              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">portfolio 24'</p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}

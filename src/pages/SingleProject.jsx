@@ -23,6 +23,48 @@ function SingleProject() {
   const imageRefs = useRef([]);
   const titleRef = useRef(null);
   const projectTitle = useRef(null);
+    const paragraphsRef = useRef([]);
+  
+    const addToParagraphsRefs = (el) => {
+      if (el && !paragraphsRef.current.includes(el)) {
+        paragraphsRef.current.push(el);
+      }
+    };
+
+    useEffect(() => {
+      const revertFunctions = [];
+      
+      paragraphsRef.current.forEach((element) => {
+        if (!element) return;
+        
+        const splitText = new SplitType(element, {
+          types: "lines"
+        });
+        
+        if (splitText.lines && splitText.lines.length > 0) {
+          gsap.from(splitText.lines, {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            stagger: 0.15,
+            delay: 1.4,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+          });
+        }
+        
+        revertFunctions.push(() => splitText.revert());
+      });
+      
+      return () => {
+        revertFunctions.forEach(revert => revert());
+        paragraphsRef.current = [];
+      };
+    }, []);
 
   const mergeRefs =
     (...refs) =>
@@ -213,11 +255,11 @@ function SingleProject() {
             {project.projectSecondName}
           </h1>
         </div>
-        <div className="flex justify-between uppercase p-2 mt-[25vh]">
-          <p className="font-geist-semibold">{project.projectDate}</p>
-          <div className="w-2xl text-base ">
-            <p>{project.projectFirstParagraph}</p>
-            <p className="mt-5">{project.projectSecondParagraph}</p>
+        <div className="flex justify-between p-2 mt-[25vh]">
+          <p className="font-geist-semibold uppercase" ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectDate}</p>
+          <div className="w-xl text-sm font-geist-medium">
+            <p ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectFirstParagraph}</p>
+            <p ref={addToParagraphsRefs} className="mt-5"  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectSecondParagraph}</p>
           </div>
         </div>
         <img
@@ -225,42 +267,42 @@ function SingleProject() {
           alt={project.projectFirstName}
           className="mt-12 w-full p-3"
         />
-        <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex justify-between p-3">
-          <p className="uppercase font-geist-medium">technologies used</p>
-          <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase ">
+        <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex justify-between font-geist-medium p-3">
+          <p className="uppercase">technologies used</p>
+          <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase text-base leading-none">
             <div>
-              <p className="font-geist-medium">frontend</p>
+              <p>frontend</p>
               <p className="mt-1">{project.frontend}</p>
             </div>
             {project?.backend ? (
               <div>
-                <p className="font-geist-medium">backend</p>
+                <p>backend</p>
                 <p className="mt-1">{project.backend}</p>
               </div>
             ) : (
               <div>
-                <p className="font-geist-medium">design</p>
+                <p>design</p>
                 <p className="mt-1">{project?.design}</p>
               </div>
             )}
             {project?.database ? (
               <div>
-                <p className="font-geist-medium">database</p>
+                <p>database</p>
                 <p className="mt-1">{project.database}</p>
               </div>
             ) : (
               <div>
-                <p className="font-geist-medium">animations & scrolling</p>
+                <p>animations & scrolling</p>
                 <p className="mt-1">{project?.["animations&scrolling"]}</p>
               </div>
             )}
             <div>
-              <p className="font-geist-medium">deployment</p>
+              <p>deployment</p>
               <p className="mt-1">{project.deployment}</p>
             </div>
           </div>
         </div>
-        <p className="uppercase mt-5 font-geist-medium">gallery</p>
+        <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
         <div className="grid grid-cols-2 gap-4 mt-5 p-3">
           {project.photos &&
             project.photos.map((photo, index) => (

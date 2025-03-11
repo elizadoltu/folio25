@@ -232,31 +232,31 @@ const About = () => {
         </div>
       </div>
 
-      <div className="uppercase mt-[10vh] flex gap-10">
+      <div className="uppercase mt-[10vh] flex gap-10 text-base font-geist-semibold">
         <div>
-          <h1 className="font-geist-semibold">honors & awards</h1>
+          <h1 className="underline" ref={addToParagraphsRefs}>honors & awards</h1>
           <div className="mt-5 leading-none uppercase">
-            <p>young jury - awwwards &#40;2025&#41;</p>
-            <p>honors - portfolio 24' &#40;2024&#41;</p>
-            <p>honors - meowseum &#40;2025&#41;</p>
-            <p>judge awards - ftc &#40;2019&#41;</p>
+            <p ref={addToParagraphsRefs}>young jury - awwwards &#40;2025&#41;</p>
+            <p ref={addToParagraphsRefs}>honors - portfolio 24' &#40;2024&#41;</p>
+            <p ref={addToParagraphsRefs}>honors - meowseum &#40;2025&#41;</p>
+            <p ref={addToParagraphsRefs}>judge awards - ftc &#40;2019&#41;</p>
           </div>
         </div>
         <div>
-            <h1 className="font-geist-semibold">skills</h1>
+            <h1 className="underline" ref={addToParagraphsRefs}>skills</h1>
             <div className="flex gap-5 leading-none mt-5">
                 <div>
-                    <p>react</p>
-                    <p>angular</p>
-                    <p>tailwind css</p>
-                    <p>gsap</p>
-                    <p>figma</p>
+                    <p ref={addToParagraphsRefs}>react</p>
+                    <p ref={addToParagraphsRefs}>angular</p>
+                    <p ref={addToParagraphsRefs}>tailwind css</p>
+                    <p ref={addToParagraphsRefs}>gsap</p>
+                    <p ref={addToParagraphsRefs}>figma</p>
                 </div>
                 <div>
-                    <p>nodejs</p>
-                    <p>expressjs</p>
-                    <p>python</p>
-                    <p>mongodb</p>
+                    <p ref={addToParagraphsRefs}>nodejs</p>
+                    <p ref={addToParagraphsRefs}>expressjs</p>
+                    <p ref={addToParagraphsRefs}>python</p>
+                    <p ref={addToParagraphsRefs}>mongodb</p>
                 </div>
             </div>
         </div>
