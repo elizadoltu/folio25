@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import '../styles/page-transition.css';
 
@@ -12,7 +12,7 @@ const PageTransition = ({ isActive, onComplete }) => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!containerRef.current) return;
     
     if (isActive) {
