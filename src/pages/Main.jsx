@@ -7,17 +7,21 @@ import About from "../components/About";
 import Work from "../components/Work";
 import DynamicCursor from "../utils/DynamicCursor";
 import SplitType from "split-type";
-import TransitionMain from "../animations/TransitionMain";
-import PageTransition from "../animations/Transition";
+import PageFadeSequence from "../animations/PageFadeSequence";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
-  const [showTransitions, setShowTransitions] = useState({
-    mainTransition: true,
-    pageTransition: false,
-  });
   
+
+  const [isTransitionActive, setIsTransitionActive] = useState(true);
+
+  const handleTransitionComplete = () => {
+    setContentVisible(true);
+  };
+  
+  
+
   const imageAnimationRevealRef = useRef(null);
   const paragraphsRef = useRef([]);
   const titleRef = useRef();
@@ -28,23 +32,6 @@ function Main() {
     }
   };
 
-  const handleMainTransitionComplete = () => {
-    setShowTransitions({
-      mainTransition: false,
-      pageTransition: true,
-    });
-  };
-
-  const handlePageTransitionComplete = () => {
-    setShowTransitions({
-      mainTransition: false,
-      pageTransition: false,
-    });
-    
-    setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-  };
 
   useEffect(() => {
     gsap.fromTo(
@@ -55,7 +42,7 @@ function Main() {
       {
         clipPath: "inset(0 0 0 0)",
         duration: 0.5,
-        delay: 6.0,
+        delay: 3.5,
         ease: "power4.inOut",
         scrollTrigger: {
           trigger: imageAnimationRevealRef.current,
@@ -74,6 +61,7 @@ function Main() {
         rotation: 0,
       },
       {
+        delay: 3.0,
         rotation: 360,
         duration: 2.5,
         scrollTrigger: {
@@ -100,7 +88,7 @@ function Main() {
           y: 50,
           duration: 0.6,
           stagger: 0.1,
-          delay: 6.0,
+          delay: 3.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: element,
@@ -132,7 +120,7 @@ function Main() {
         y: 100,
         duration: 0.5,
         stagger: 0.12,
-        delay: 6.0,
+        delay: 3.5,
         ease: "power2.out",
         scrollTrigger: {
           trigger: titleRef.current,
@@ -147,16 +135,13 @@ function Main() {
 
   return (
     <>
-      {showTransitions.mainTransition && (
-        <TransitionMain onComplete={handleMainTransitionComplete} />
-      )}
-      
-      {showTransitions.pageTransition && (
-        <PageTransition 
-          isActive={true} 
-          onComplete={handlePageTransitionComplete} 
-        />
-      )}
+  <PageFadeSequence 
+        isActive={isTransitionActive} 
+        onComplete={() => {
+          setIsTransitionActive(false);
+          handleTransitionComplete();
+        }} 
+      />
       
       <div className="size-container-ideal relative">
         <DynamicCursor />
@@ -213,7 +198,9 @@ function Main() {
               designs that not only look good but feel seamless and engaging.
             </p>
           </div>
-          <img
+          <div className="text-right">
+          <p className="text-sm font-geist-medium uppercase">Scroll Down</p>
+            <img
             src="/profile-1.svg"
             alt="eliza teodora doltu"
             ref={imageAnimationRevealRef}
@@ -222,6 +209,8 @@ function Main() {
               transition: "clip-path 0.3s ease-out",
             }}
           />
+          </div>
+          
         </div>
         <div className="size-container-ideal">
           <div className="mt-[20vh]">

@@ -1,8 +1,0 @@
-.main-transition--container {
-    position: relative;
-    overflow: hidden;
-}
-
-.main-transition--container div {
-    transform-origin: left top;
-}
