@@ -3,10 +3,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import "../styles/reveal-animation.css";
-import realioImage from "../data/images/realio-app/main.png";
-import bookingImage from "../data/images/booking-iasi/main.png";
-import portfolioImage from "../data/images/portfolio-24/main.png";
-import meowseumImage from "../data/images/meowseum/main.png";
+import realioImage from "../data/images/realio-app/main.webp";
+import bookingImage from "../data/images/booking-iasi/main.webp";
+import portfolioImage from "../data/images/portfolio-24/main.webp";
+import meowseumImage from "../data/images/meowseum/main.webp";
 import { useParallax } from "react-scroll-parallax";
 import Contact from "./Contact";
 
