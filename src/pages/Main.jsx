@@ -146,7 +146,8 @@ function Main() {
       <div className="size-container-ideal relative">
         <DynamicCursor />
         <Menu />
-        <div
+        <div data-cursor="scroll to explore">
+          <div
           className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3"
           ref={titleRef}
         >
@@ -164,7 +165,7 @@ function Main() {
             doltu
           </h1>
         </div>
-        <div className="flex justify-end w-full px-3">
+        <div className="flex justify-end w-full px-3" >
           <div className="flex gap-2 w-[50rem] font-geist-medium">
             <p className="text-sm w-7xl" ref={addToParagraphsRefs}>
               Hi, my name is Eliza, and creativity drives everything I do. As a
@@ -182,7 +183,7 @@ function Main() {
             </p>
           </div>
         </div>
-        <div className="mt-[22vh] p-5 flex justify-between items-end">
+        <div className="mt-[22vh] p-5 flex justify-between items-end" >
           <div className="w-96">
             <img
               src="/logo-black.svg"
@@ -198,8 +199,6 @@ function Main() {
               designs that not only look good but feel seamless and engaging.
             </p>
           </div>
-          <div className="text-right">
-          <p className="text-sm font-geist-medium uppercase">Scroll Down</p>
             <img
             src="/profile-1.svg"
             alt="eliza teodora doltu"
@@ -209,9 +208,10 @@ function Main() {
               transition: "clip-path 0.3s ease-out",
             }}
           />
-          </div>
           
         </div>
+        </div>
+        
         <div className="size-container-ideal">
           <div className="mt-[20vh]">
             <MarqueeScrollDirection direction="left" />
