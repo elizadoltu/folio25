@@ -149,7 +149,7 @@ function Main() {
         <Menu />
         <div data-cursor="scroll for more">
           <div
-          className="uppercase tablet:mt-5 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
+          className="uppercase tablet:mt-10 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
           ref={titleRef}
         >
           <h1
