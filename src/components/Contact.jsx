@@ -57,7 +57,7 @@ const Contact = () => {
   const logoSrc = "/logo-white.svg";
 
   return (
-    <div className="mt-[20vh]">
+    <div className="mt-[20vh]" id="contact">
       <div
         className="uppercase mt-5 desktop:text-12xl tablet:text-10xl mobile:text-[2.8rem] flex leading-none flex-wrap flex-1 justify-between p-3"
         ref={titleRef}
