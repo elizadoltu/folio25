@@ -195,6 +195,7 @@ function Main() {
             src="/profile-1.svg"
             alt="eliza teodora doltu"
             ref={imageAnimationRevealRef}
+            className="mobile:w-full tablet:w-auto"
             style={{
               clipPath: "inset(0 100% 0 0)",
               transition: "clip-path 0.3s ease-out",
