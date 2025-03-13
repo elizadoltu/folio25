@@ -199,7 +199,7 @@ const Work = () => {
   return (
     <div className="size-container-ideal mt-[20vh]" id="work">
       <h1
-        className="desktop:text-11xl tablet:text-10xl mobile:text-[4rem] font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex"
+        className="desktop:text-11xl tablet:text-10xl mobile:text-[3rem] font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex"
         ref={mergeRefs(textFeaturedWorkRef, title)}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >

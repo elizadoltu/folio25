@@ -179,7 +179,7 @@ const About = () => {
       id="about"
     >
       <div
-        className="uppercase mt-[20vh] tablet:text-6xl mobile:text-4xl"
+        className="uppercase mt-[20vh] tablet:text-6xl mobile:text-5xl"
         ref={addToKeyRefs}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
@@ -201,7 +201,7 @@ const About = () => {
         </div>
       </div>
       <div
-        className="flex justify-end tablet:text-6xl mobile:text-4xl uppercase tracking-tighter"
+        className="flex justify-end tablet:text-6xl mobile:text-5xl uppercase tracking-tighter"
         ref={addToKeyRefs}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
