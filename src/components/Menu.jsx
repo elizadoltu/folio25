@@ -66,7 +66,7 @@ const Menu = () => {
             : "opacity-0 invisible -translate-y-full"
         } tablet:bg-transparent tablet:backdrop-blur-none tablet:opacity-100 tablet:visible tablet:translate-y-0 tablet:relative tablet:p-3 tablet:flex tablet:justify-between`}
       >
-        <div className="flex flex-col tablet:flex-row mobile:mt-20 tablet:mt-0 mobile:space-y-5 tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
+        <div className="flex flex-col tablet:flex-row mobile:mt-20 mobile:text-2xl tablet:text-base tablet:mt-0 mobile:space-y-5 tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
           <div>
             <p>designer & developer</p>
           </div>
@@ -81,7 +81,7 @@ const Menu = () => {
 
         </div>
         
-        <div className="flex flex-col tablet:flex-row tablet:items-center space-y-5 tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
+        <div className="flex flex-col tablet:flex-row mobile:text-2xl tablet:text-base tablet:items-center tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
           <div>
             <p>navigation</p>
             <div className="flex gap-5 font-geist-medium">
