@@ -14,6 +14,28 @@
       })(window, document, "script", "dataLayer", "GTM-PR36X2DW");
     </script>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Eliza Doltu is a creative web developer and designer specializing in immersive, interactive digital experiences." />
+    <meta name="keywords" content="Eliza Doltu, web developer, web designer, interactive design, creative coding, UX/UI, digital experiences" />
+    <meta name="author" content="Eliza Doltu" />
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <link rel="canonical" href="https://elizadoltuofficial.net/profile-1.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://elizadoltuofficial.net" />
+    <meta property="og:title" content="Eliza Doltu | Web Developer & Designer" />
+    <meta property="og:description" content="Creating immersive, interactive digital experiences through innovative design and coding." />
+    <meta property="og:image" content="https://elizadoltuofficial.net/profile-1.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://elizadoltuofficial.net" />
+    <meta property="twitter:title" content="Eliza Doltu | Web Developer & Designer" />
+    <meta property="twitter:description" content="Crafting unique, engaging digital experiences through code and creativity." />
+    <meta property="twitter:image" content="https://elizadoltuofficial.net/profile-1.svg" />
+
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="prefetch" href="/src/index.css">
     <link rel="prefetch" href="/src/global/geist.css">
@@ -23,7 +45,6 @@
     <link rel="preload" href="/src/fonts/geist/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/src/fonts/geist/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/src/fonts/kenoky/KenokyLight.ttf" as="font" type="font/ttf" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eliza Doltu | Web Developer & Designer</title>
   </head>
   <script
@@ -39,6 +60,52 @@
 
     gtag("config", "G-JTDY3L3HFD");
   </script>
+  <script>
+    function addSchemaForPage() {
+      const pageSchemas = {
+        '/': {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Eliza Doltu | Web Developer & Designer",
+          "url": "https://elizadoltuofficial.net/",
+          "description": "Portfolio of Eliza Doltu, a creative web developer and designer crafting immersive digital experiences.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://elizadoltuofficial.net/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        
+        '/projects/:projectLink': {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": "Project Details | Eliza Doltu",
+          "url": "https://elizadoltuofficial.net/projects/{projectLink}",
+          "description": "Detailed insights into Eliza Doltu's creative projects, showcasing innovative web design and development."
+        }
+      };
+  
+      const path = window.location.pathname;
+      let schema = pageSchemas[path] || pageSchemas['/'];
+  
+      if (path.startsWith('/projects/')) {
+        const projectLink = path.split('/projects/')[1];
+        schema = {
+          ...pageSchemas['/projects/:projectLink'],
+          "url": `https://elizadoltuofficial.net/projects/${projectLink}`,
+          "name": `${projectLink.replace(/-/g, ' ')} | Eliza Doltu`
+        };
+      }
+  
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+  
+    window.onload = addSchemaForPage;
+  </script>
+  
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

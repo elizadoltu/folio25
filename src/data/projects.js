@@ -74,7 +74,7 @@ const projectsData = [
       linkCode: "https://github.com/elizadoltu/realio-real-estate-platform"
     },
     {
-      "projectFirstName": "Mewoseum",
+      "projectFirstName": "Meowseum",
       "projectSecondName": 'App',
       "projectDate": "January - February 2025",
       "projectFirstParagraph": "Meowseum is the ultimate online platform for cat lovers, dedicated to building the world's largest digital cat gallery. Users can upload, share, and explore a growing collection of adorable and funny feline photos, giving every cat its moment in the spotlight.",
