@@ -149,7 +149,7 @@ function Main() {
         <Menu />
         <div data-cursor="scroll for more">
           <div
-          className="uppercase tablet:mt-5 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-5xl flex leading-none flex-wrap flex-1 justify-between p-3"
+          className="uppercase tablet:mt-5 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
           ref={titleRef}
         >
           <h1
@@ -175,7 +175,7 @@ function Main() {
             <h1 className="leading-none" ref={addToParagraphsRefs}>transforming a simple visit into an inspiring journey.</h1>
           </div>
         </div>
-        <div className="mt-[22vh] p-5 tablet:flex justify-between items-end" >
+        <div className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end" >
           <div className="tablet:w-96 mobile:w-full">
             <img
               src="/logo-black.svg"
