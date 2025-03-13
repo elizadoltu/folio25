@@ -1,7 +1,7 @@
 
   
   .underline-link {
-    color: #131313;
+    color: #e2e1df;
 
     text-decoration: none;
     position: relative;
@@ -16,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 0.0625em;
-    background-color: #131313;
+    background-color: #e2e1df;
     transition: transform 0.735s cubic-bezier(0.625, 0.05, 0, 1);
     transform-origin: right;
     transform: scaleX(0) rotate(0.001deg);

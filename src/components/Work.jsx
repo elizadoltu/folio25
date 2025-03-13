@@ -199,14 +199,14 @@ const Work = () => {
   return (
     <div className="size-container-ideal mt-[20vh]" id="work">
       <h1
-        className="text-11xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex"
+        className="desktop:text-11xl tablet:text-10xl mobile:text-[4rem] font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex"
         ref={mergeRefs(textFeaturedWorkRef, title)}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <span className="font-kenoky ml-2">featured</span> work
+        <span className="font-kenoky ml-2">featured </span> work
       </h1>
-      <div ref={image} className="bg-[#131313] text-[#E2E1DF] px-5 pb-5 overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-        <div className="grid grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium">
+      <div ref={image} className="bg-[#131313] text-[#E2E1DF] px-5 pb-[30vh] overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+        <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-3 mt-5 tablet:text-sm mobile:text-xs uppercase font-geist-medium">
           <div className="flex flex-col flex-1 flex-wrap">
             <p className="text-[#FF4C2F] leading-none">01</p>
 
@@ -278,7 +278,7 @@ const Work = () => {
             </div>
           </div>
           <div
-            className="flex flex-col flex-1 flex-wrap uppercase text-sm font-geist-medium"
+            className="flex flex-col flex-1 flex-wrap uppercase tablet:text-sm mobile:text-xs font-geist-medium"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             <p className="text-[#FF4C2F] leading-none">04</p>
@@ -304,7 +304,7 @@ const Work = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3 mt-20 text-sm uppercase font-geist-medium">
+        <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-3 mt-20 tablet:text-sm mobile:text-xs uppercase font-geist-medium">
           <div className="flex flex-col flex-1 flex-wrap">
             <p>01</p>
             <div
@@ -405,7 +405,6 @@ const Work = () => {
             </div>
           </div>
         </div>
-        <Contact />
       </div>
     </div>
   );

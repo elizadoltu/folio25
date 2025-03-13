@@ -28,6 +28,10 @@
   --font-kenoky: 'KenokyLight';
   --text-11xl: 15rem;
   --text-12xl: 18rem;
+  --text-10xl: 12rem;
+  --breakpoint-mobile: 300px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1790px;
 }
 
 body {

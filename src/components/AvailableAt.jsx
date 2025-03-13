@@ -185,14 +185,14 @@ const AvailableAt = () => {
   return (
     <div className="mt-[20vh] size-container-ideal">
       <h1
-        className="text-11xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex items-center"
+        className="desktop:text-11xl tablet:text-10xl mobile:text-5xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex items-center"
         ref={mergeRefs(textFeaturedWorkRef, title)}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <span className="font-kenoky ml-2">Available</span> at
+        <span className="font-kenoky mr-2">Available </span> at
       </h1>
       <div className="size-container-ideal bg-[#131313] text-[#e2e1df]">
-        <div className="grid grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium p-3">
+        <div className="grid tablet:grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium p-3">
           <div className="flex flex-col flex-1 flex-wrap">
             <p className="text-[#FF4C2F] leading-none">01</p>
 
@@ -244,7 +244,7 @@ const AvailableAt = () => {
           
          
         </div>
-        <div className="grid grid-cols-2 gap-3 p-3">
+        <div className="grid tablet:grid-cols-2 gap-3 p-3">
           <div className="live-design-preview--container">
             <div className="mt-20 flex justify-between">
               <img src="/rectangle.png" alt="a corner of a div" />
@@ -271,7 +271,7 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;Design&#41;</p>
-                    <h1 className="font-kenoky text-9xl">
+                    <h1 className="font-kenoky tablet:text-9xl mobile:text-6xl">
                       {project?.liveAt || project.design}
                     </h1>
                   </div>
@@ -318,7 +318,7 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;Code&#41;</p>
-                    <h1 className="font-kenoky text-9xl">{project.code}</h1>
+                    <h1 className="font-kenoky tablet:text-9xl mobile:text-6xl">{project.code}</h1>
                   </div>
                 </div>
               </a>
@@ -364,7 +364,7 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;next project&#41;</p>
-                    <h1 className="font-kenoky text-9xl">{nextProject.projectFirstName}</h1>
+                    <h1 className="font-kenoky tablet:text-9xl mobile:text-4xl">{nextProject.projectFirstName}</h1>
                   </div>
                 </div>
               
@@ -383,7 +383,7 @@ const AvailableAt = () => {
               />
             </div>
           </div>
-        <div className="btn-group mt-[10vh]">
+        <div className="btn-group mt-[10vh] tablet:ml-[20rem] mobile:ml-[5rem]">
           <a
             href={`${nextProject.projectLink}`}
             className="btn-bubble-arrow w-inline-block"

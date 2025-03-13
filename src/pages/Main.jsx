@@ -15,6 +15,7 @@ function Main() {
   
 
   const [isTransitionActive, setIsTransitionActive] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
 
   const handleTransitionComplete = () => {
     setContentVisible(true);
@@ -146,9 +147,9 @@ function Main() {
       <div className="size-container-ideal relative">
         <DynamicCursor />
         <Menu />
-        <div data-cursor="scroll to explore">
+        <div data-cursor="scroll for more">
           <div
-          className="uppercase mt-5 text-12xl flex leading-none flex-wrap flex-1 justify-between p-3"
+          className="uppercase tablet:mt-5 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-5xl flex leading-none flex-wrap flex-1 justify-between p-3"
           ref={titleRef}
         >
           <h1
@@ -165,33 +166,24 @@ function Main() {
             doltu
           </h1>
         </div>
-        <div className="flex justify-end w-full px-3" >
-          <div className="flex gap-2 w-[50rem] font-geist-medium">
-            <p className="text-sm w-7xl" ref={addToParagraphsRefs}>
-              Hi, my name is Eliza, and creativity drives everything I do. As a
-              web developer and designer, I see websites as more than just
-              functional spaces—they're immersive experiences shaped by visuals,
-              typography, and motion. I love blending design and technology to
-              bring ideas to life.
-            </p>
-            <p className="text-sm w-7xl" ref={addToParagraphsRefs}>
-              I'm currently studying Computer Science at Alexandru Ioan Cuza
-              University, constantly improving my technical skills and
-              problem-solving abilities. Beyond coding, I've always been
-              passionate about movement—skiing, football, and staying active have
-              been part of my life since childhood.
-            </p>
+        <div className="tablet:flex justify-end w-full px-3 leading-none mobile:hidden">
+          <div className="desktop:w-[50rem] tablet:w-[42rem] font-geist-medium uppercase tablet:text-base" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+            <h1 className="leading-none" ref={addToParagraphsRefs}>Websites are more than just functional spaces—they're immersive experiences</h1>
+            <h1 className="leading-none" ref={addToParagraphsRefs}>where visuals, typography and motion come together to tell a story, evoke emotions and create memorable interactions.</h1>
+            <h1 className="leading-none text-right" ref={addToParagraphsRefs}>Every element, from the smallest detail to the overall design</h1>
+            <h1 className="leading-none" ref={addToParagraphsRefs}>plays a role in shaping how users feel and engage</h1>
+            <h1 className="leading-none" ref={addToParagraphsRefs}>transforming a simple visit into an inspiring journey.</h1>
           </div>
         </div>
-        <div className="mt-[22vh] p-5 flex justify-between items-end" >
-          <div className="w-96">
+        <div className="mt-[22vh] p-5 tablet:flex justify-between items-end" >
+          <div className="tablet:w-96 mobile:w-full">
             <img
               src="/logo-black.svg"
               alt="logo of the website"
-              className="w-30 h-30 logo-image"
+              className="tablet:w-30 tablet:h-30 mobile:w-20 mobile:h-20 logo-image"
             />
             <p
-              className="mt-5 text-sm font-geist-medium"
+              className="mt-5 text-sm font-geist-medium flex flex-wrap flex-1"
               ref={addToParagraphsRefs}
             >
               For me, web development is an art where logic and creativity meet. I
@@ -213,13 +205,14 @@ function Main() {
         </div>
         
         <div className="size-container-ideal">
-          <div className="mt-[20vh]">
+          
+
+          <Work />
+          <div>
             <MarqueeScrollDirection direction="left" />
             <MarqueeScrollDirection direction="right" />
           </div>
           <About />
-
-          <Work />
         </div>
       </div>
     </>

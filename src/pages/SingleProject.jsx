@@ -230,34 +230,34 @@ function SingleProject() {
 
       <div className="size-container-ideal">
         <DynamicCursor />
-        <div className="text-base fixed uppercase leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
+        <div className="text-base fixed mobile:hidden tablet:flex uppercase text-[#e2e1df] mix-blend-difference leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
           <a href="/" className="cursor-pointer">
-            <h1 className="font-geist-medium" data-cursor="Home">
+            <h1 className="font-geist-medium " data-cursor="Home">
               <span className="font-kenoky">eliza</span> doltu
             </h1>
           </a>
         </div>
         <div
           ref={mergeRefs(titleRef, projectTitle)}
-          className="fixed top-0 left-0 z-40 w-full flex justify-between uppercase leading-none p-2"
+          className="tablet:fixed text-[#e2e1df] mix-blend-difference tablet:top-0 mobile:top-6 left-0 z-40 w-full flex justify-between uppercase leading-none p-2"
         >
           
           <h1
-            className="text-11xl font-kenoky"
+            className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-kenoky"
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             {project.projectFirstName}
           </h1>
           <h1
-            className="text-11xl font-geist-semibold"
+            className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-geist-semibold "
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             {project.projectSecondName}
           </h1>
         </div>
-        <div className="flex justify-between p-2 mt-[25vh]">
+        <div className="flex mobile:flex-col tablet:flex-row justify-between p-2 tablet:mt-[25vh] mobile:mt-[10vh]">
           <p className="font-geist-semibold uppercase" ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectDate}</p>
-          <div className="w-xl text-sm font-geist-medium">
+          <div className="tablet:w-xl mobile:w-full text-sm font-geist-medium">
             <p ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectFirstParagraph}</p>
             <p ref={addToParagraphsRefs} className="mt-5"  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectSecondParagraph}</p>
           </div>
@@ -267,9 +267,9 @@ function SingleProject() {
           alt={project.projectFirstName}
           className="mt-12 w-full p-3"
         />
-        <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex justify-between font-geist-medium p-3">
+        <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
           <p className="uppercase">technologies used</p>
-          <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase text-base leading-none">
+          <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase tablet:text-base leading-none mobile:mt-5 tablet:mt-0">
             <div>
               <p>frontend</p>
               <p className="mt-1">{project.frontend}</p>
@@ -303,7 +303,7 @@ function SingleProject() {
           </div>
         </div>
         <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
-        <div className="grid grid-cols-2 gap-4 mt-5 p-3">
+        <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-4 mt-5 p-3">
           {project.photos &&
             project.photos.map((photo, index) => (
               <div

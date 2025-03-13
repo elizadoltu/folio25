@@ -109,7 +109,7 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
   }, [direction, speed]);
 
   return (
-    <section className="section-resource">
+    <section className="section-resource bg-[#131313] text-[#e2e1df]">
       <div
         ref={marqueeRef}
         data-marquee-duplicate="2"
@@ -138,7 +138,7 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
 
             <div className="marquee-advanced__item">
               <img
-                src="/logo-black.svg"
+                src="/logo-white.svg"
                 alt="Marquee icon"
                 className="marquee__advanced__img"
                 loading="eager"

@@ -74,7 +74,7 @@ const PageFadeSequence = ({ isActive, onComplete }) => {
 
   return (
     <div className="page-fade-sequence__container" ref={sequenceContainerRef}>
-      <div className="page-fade-sequence__text-wrapper uppercase font-geist-semibold text-4xl">
+      <div className="page-fade-sequence__text-wrapper uppercase font-geist-semibold tablet:text-4xl mobile:text-2xl">
         <h1 ref={headingRef1} className="page-fade-sequence__heading" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
           web <span className="font-kenoky">dev</span>
         </h1>
