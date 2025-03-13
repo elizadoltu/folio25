@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import DateObject from "react-date-object";
 import gsap from "gsap";
 import AnimatedButton from "../animations/StaggerAnimation";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [time, setTime] = useState(
-    new DateObject({ timezone: "Europe/Bucharest" })
-  );
+  const [time, setTime] = useState(new DateObject({ timezone: "Europe/Bucharest" }));
+
+  const updateTime = useCallback(() => {
+    setTime(new DateObject({ timezone: "Europe/Bucharest" }));
+    requestAnimationFrame(updateTime);
+  }, []);
 
   useEffect(() => {
     gsap.to(".blink-colon", {
@@ -17,12 +20,10 @@ const Menu = () => {
       duration: 0.5,
     });
 
-    const interval = setInterval(() => {
-      setTime(new DateObject({ timezone: "Europe/Bucharest" }));
-    }, 1000);
+    const animationFrame = requestAnimationFrame(updateTime);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [updateTime]);
 
   const hours = time.format("hh");
   const minutes = time.format("mm");

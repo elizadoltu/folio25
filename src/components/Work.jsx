@@ -8,7 +8,6 @@ import bookingImage from "../data/images/booking-iasi/main.webp";
 import portfolioImage from "../data/images/portfolio-24/main.webp";
 import meowseumImage from "../data/images/meowseum/main.webp";
 import { useParallax } from "react-scroll-parallax";
-import Contact from "./Contact";
 
 gsap.registerPlugin(ScrollTrigger);
 

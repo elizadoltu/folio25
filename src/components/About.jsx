@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import Contact from "./Contact";
+const Contact = lazy(() => import('../components/Contact'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -305,7 +305,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+  <Contact />
+</Suspense>
+
     </div>
   );
 };

@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
-import Main from "./pages/Main";
+import React, { useEffect, lazy, Suspense } from "react";
 import "./index.css";
 import "./global/geist.css";
 import "./global/kenoky.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SingleProject from "./pages/SingleProject";
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -12,8 +10,10 @@ import { ParallaxProvider } from "react-scroll-parallax";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App () {
+const Main = lazy(() => import("./pages/Main"));
+const SingleProject = lazy(() => import("./pages/SingleProject"));
 
+function App() {
   useEffect(() => {
     const lenis = new Lenis();
     lenis.on("scroll", () => {
@@ -34,12 +34,14 @@ function App () {
 
   return (
     <ParallaxProvider>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/projects/:projectLink" element={<SingleProject />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Suspense fallback={<div className="bg-[#131313] text-[#e2e1df] flex justify-center items-center h-screen w-full">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/projects/:projectLink" element={<SingleProject />} />
+          </Routes>
+        </Suspense>
+      </Router>
     </ParallaxProvider>
   );
 }

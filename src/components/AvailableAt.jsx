@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import projectsData from "../data/projects";
 import "../styles/button-bubble.css";
-import Contact from "../components/Contact";
+const Contact = lazy(() => import('../components/Contact'));
+const BubbleButton = lazy(() => import('../components/BubbleButton'));
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "../styles/reveal-animation.css";
@@ -26,7 +27,6 @@ const AvailableAt = () => {
   );
   const nextProjectImageRef = useRef([]);
   const parentRef = useRef([]);
-  if (!project) return <div>Project not found</div>;
 
   const currentIndex = projectsData.findIndex(
     (p) => p.projectLink === projectLink
@@ -181,6 +181,8 @@ const AvailableAt = () => {
         }
       });
     };
+
+    if (!project) return <div>Project not found</div>;
 
   return (
     <div className="mt-[20vh] size-container-ideal">
@@ -383,75 +385,13 @@ const AvailableAt = () => {
               />
             </div>
           </div>
-        <div className="btn-group mt-[10vh] tablet:ml-[20rem] mobile:ml-[5rem]">
-          <a
-            href={`${nextProject.projectLink}`}
-            className="btn-bubble-arrow w-inline-block"
-            data-cursor={`To ${nextProject.projectFirstName} ${nextProject?.projectSecondName}`}
-          >
-            <div
-              className="btn-bubble-arrow__arrow"
-              style={{ backgroundColor: project.color }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="100%"
-                className="btn-bubble-arrow__arrow-svg"
-              >
-                <polyline
-                  points="18 8 18 18 8 18"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit="10"
-                  strokeWidth="1.5"
-                ></polyline>
-                <line
-                  x1="18"
-                  y1="18"
-                  x2="5"
-                  y2="5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit="10"
-                  strokeWidth="1.5"
-                ></line>
-              </svg>
-            </div>
-            <div className="btn-bubble-arrow__content">
-              <span className="btn-bubble-arrow__content-text">
-                Next Project
-              </span>
-            </div>
-            <div className="btn-bubble-arrow__arrow is--duplicate">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="100%"
-                className="btn-bubble-arrow__arrow-svg"
-              >
-                <polyline
-                  points="18 8 18 18 8 18"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit="10"
-                  strokeWidth="1.5"
-                ></polyline>
-                <line
-                  x1="18"
-                  y1="18"
-                  x2="5"
-                  y2="5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit="10"
-                  strokeWidth="1.5"
-                ></line>
-              </svg>
-            </div>
-          </a>
-        </div>
-        <Contact />
+          <Suspense fallback={<div>Loading...</div>}>
+          <BubbleButton nextProject={nextProject} projectColor={project.color} />
+
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Contact />
+        </Suspense>
       </div>
     </div>
   );
