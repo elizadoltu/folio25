@@ -42,7 +42,7 @@ function Main() {
         ease: "power4.inOut",
         scrollTrigger: {
           trigger: imageAnimationRevealRef.current,
-          start: "top 80%",
+          start: "top 70%",
           toggleActions: "play none none none",
           once: true,
         },
