@@ -100,7 +100,7 @@ const Gallery = () => {
       }, [project.photos]);
 
     return (
-        <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-4 mt-5 p-3">
+        <section className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-4 mt-5 p-3">
           {project.photos &&
             project.photos.map((photo, index) => (
               <div
@@ -118,7 +118,7 @@ const Gallery = () => {
                 />
               </div>
             ))}
-        </div>
+        </section>
     );
 }
 

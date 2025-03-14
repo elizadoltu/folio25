@@ -20,6 +20,7 @@ const AnimatedButton = ({ text, href }) => {
       className="w-inline-block btn-animate-chars" 
       target={href && !href.startsWith('#') ? "_blank" : undefined}
       onClick={handleClick}
+      rel="noopener"
     >
       <span data-button-animate-chars className="btn-animate-chars__text">
         {text.split("").map((char, index) => (

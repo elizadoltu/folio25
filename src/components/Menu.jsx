@@ -30,8 +30,8 @@ const Menu = () => {
   const ampm = time.format("A");
 
   return (
-    <div className="menu uppercase font-general-semibold text-lg fixed top-0 left-0 w-full z-50 tablet:mix-blend-difference">
-      <div className="fixed top-4 left-4 z-[60] tablet:hidden">
+    <header className="menu uppercase font-general-semibold text-lg fixed top-0 left-0 w-full z-50 tablet:mix-blend-difference">
+      <section className="fixed top-4 left-4 z-[60] tablet:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-2 uppercase rounded-lg tablet:text-[#e2e1df] mobile:text-[#131313]"
@@ -58,9 +58,9 @@ const Menu = () => {
             Close
           </span>
         </button>
-      </div>
+      </section>
       
-      <div
+      <section
         className={`fixed inset-0 backdrop-blur-2xl bg-[#dbdbdb]/20 transition-all duration-500 ease-in-out transform ${
           isOpen
             ? "opacity-100 visible translate-y-0"
@@ -68,9 +68,9 @@ const Menu = () => {
         } tablet:bg-transparent tablet:backdrop-blur-none tablet:opacity-100 tablet:visible tablet:translate-y-0 tablet:relative tablet:p-3 tablet:flex tablet:justify-between`}
       >
         <div className="flex flex-col tablet:flex-row mobile:mt-20 mobile:text-2xl tablet:text-base tablet:mt-0 mobile:space-y-5 tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
-          <div>
-            <p>designer & developer</p>
-          </div>
+        
+          <p>designer & developer</p>
+         
           <div className="tablet:ml-10 mobile:-mt-2 tablet:mt-0">
             <p>LOCATION</p>
             <p className="font-geist-medium">
@@ -92,8 +92,8 @@ const Menu = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </header>
   );
 };
 

@@ -185,7 +185,7 @@ const AvailableAt = () => {
     if (!project) return <div>Project not found</div>;
 
   return (
-    <div className="mt-[20vh] size-container-ideal" id="available-at">
+    <main className="mt-[20vh] size-container-ideal" id="available-at">
       <h1
         className="desktop:text-11xl tablet:text-10xl mobile:text-5xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex items-center"
         ref={mergeRefs(textFeaturedWorkRef, title)}
@@ -193,7 +193,7 @@ const AvailableAt = () => {
       >
         <span className="font-kenoky mr-2">Available </span> at
       </h1>
-      <div className="size-container-ideal bg-[#131313] text-[#e2e1df]">
+      <section className="size-container-ideal bg-[#131313] text-[#e2e1df]">
         <div className="grid tablet:grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium p-3">
           <div className="flex flex-col flex-1 flex-wrap">
             <p className="text-[#FF4C2F] leading-none">01</p>
@@ -260,7 +260,7 @@ const AvailableAt = () => {
               ref={addToParentRef}
               data-cursor={`see the ${project?.liveAt || project.design} version`}
             >
-              <a href={project.linkDesign} target="_blank">
+              <a href={project.linkDesign} target="_blank" rel="noopener">
                 <div className="-mt-10 p-5 relative h-[80vh]">
                   <div className="w-full h-full overflow-hidden">
                     <img
@@ -307,7 +307,7 @@ const AvailableAt = () => {
               ref={addToParentRef}
               data-cursor={`see the source on ${project.code}`}
             >
-              <a href={project.linkCode} target="_blank">
+              <a href={project.linkCode} target="_blank" rel="noopener">
                 <div className="-mt-10 p-5 relative h-[80vh]">
                   <div className="w-full h-full overflow-hidden">
                     <img
@@ -392,8 +392,8 @@ const AvailableAt = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Contact />
         </Suspense>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

@@ -7,6 +7,7 @@ const BubbleButton = ({ nextProject, projectColor }) => {
     <div className="btn-group mt-[10vh] tablet:ml-[20rem] mobile:ml-[5rem]">
       <a
         href={`${nextProject.projectLink}`}
+        rel="noopener"
         className="btn-bubble-arrow w-inline-block"
         data-cursor={`To ${nextProject.projectFirstName} ${nextProject?.projectSecondName}`}
       >

@@ -57,8 +57,8 @@ const Contact = () => {
   const logoSrc = "/logo-white.svg";
 
   return (
-    <div className="mt-[20vh]" id="contact">
-      <div
+    <footer className="mt-[20vh]" id="contact">
+      <section
         className="uppercase mt-5 desktop:text-12xl tablet:text-10xl mobile:text-[2.8rem] flex leading-none flex-wrap flex-1 justify-between p-3"
         ref={titleRef}
       >
@@ -75,8 +75,8 @@ const Contact = () => {
         >
           touch
         </h1>
-      </div>
-      <div className="flex flex-1 flex-wrap flex-col items-end px-3 leading-none tablet:text-base uppercase">
+      </section>
+      <section className="flex flex-1 flex-wrap flex-col items-end px-3 leading-none tablet:text-base uppercase">
         <h1 className=" leading-none">
           <span className="underline font-kenoky">let's connect</span> :Whether
           you have a question
@@ -86,12 +86,12 @@ const Contact = () => {
           need assistance, or want to explore opportunities
         </h1>
         <h1 className="leading-none">i am here to help.</h1>
-      </div>
+      </section>
 
-      <div className="size-container-ideal flex mobile:flex-col tablet:flex-row justify-between items-end mt-[20vh] p-3 text-[#e2e1df]">
+      <section className="size-container-ideal flex mobile:flex-col tablet:flex-row justify-between items-end mt-[20vh] p-3 text-[#e2e1df]">
         <div className="flex flex-col justify-between">
           <div className="grid tablet:grid-cols-4 gap-5 mobile:grid-cols-2 uppercase font-geist-medium">
-            <div>
+            <div className="social__column">
               <p>
                 <AnimatedButton
                   text="behance"
@@ -105,7 +105,7 @@ const Contact = () => {
                 />
               </p>
             </div>
-            <div>
+            <div className="social__column">
               <p>
                 <AnimatedButton
                   text="linkedin"
@@ -120,7 +120,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div>
+            <div className="social__column">
               <p>
                 <AnimatedButton
                   text="email"
@@ -132,7 +132,7 @@ const Contact = () => {
                 <AnimatedButton text="+40732134019" href="tel:+40732134019" />
               </p>
             </div>
-            <div>
+            <div className="social__column">
               <p className="underline-link cursor-default leading-none">
                 by eliza doltu 25'
               </p>
@@ -145,10 +145,10 @@ const Contact = () => {
         <img
           src={logoSrc}
           alt="official logo website"
-          className="contact-image mobile:mt-20 tablet:mt-0"
+          className="contact-image mobile:mt-20 tablet:mt-0 w-64 h-64"
         />
-      </div>
-    </div>
+      </section>
+    </footer>
   );
 };
 

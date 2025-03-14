@@ -174,7 +174,7 @@ const About = () => {
     }
   };
   return (
-    <div
+    <main
       className="size-container-ideal p-3 bg-[#131313] text-[#e2e1df] overflow-hidden"
       id="about"
     >
@@ -209,7 +209,7 @@ const About = () => {
           functionality <span className="font-kenoky">& aesthetics</span>
         </h1>
       </div>
-      <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 w-full gap-5 mt-[10vh]">
+      <section className="grid tablet:grid-cols-2 mobile:grid-cols-1 w-full gap-5 mt-[10vh]">
         <div className="flex items-stretch overflow-hidden">
           <img
             ref={mergeRefs(addToRefs, addToAnimationReveal)}
@@ -224,7 +224,7 @@ const About = () => {
           />
         </div>
 
-        <div className="flex flex-col items-stretch font-geist-medium">
+        <section className="flex flex-col items-stretch font-geist-medium">
           <div className="flex overflow-hidden">
             <img
               ref={mergeRefs(addToRefs, addToAnimationReveal)}
@@ -265,8 +265,8 @@ const About = () => {
             environments, always eager to learn, adapt, and innovate in the
             ever-evolving world of technology.
           </p>
-        </div>
-      </div>
+        </section>
+      </section>
 
       <div className="uppercase mt-[10vh] tablet:flex gap-10 text-base font-geist-semibold">
         <div>
@@ -309,7 +309,7 @@ const About = () => {
   <Contact />
 </Suspense>
 
-    </div>
+    </main>
   );
 };
 

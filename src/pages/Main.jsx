@@ -139,10 +139,10 @@ function Main() {
         }}
       />
 
-      <div className="size-container-ideal relative">
+      <main className="size-container-ideal relative">
         <DynamicCursor />
         <Menu />
-        <div data-cursor="scroll for more" id="landing">
+        <section data-cursor="scroll for more" id="landing">
           <div
             className="uppercase tablet:mt-10 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
             ref={titleRef}
@@ -161,7 +161,7 @@ function Main() {
               doltu
             </h1>
           </div>
-          <div className="tablet:flex justify-end w-full px-3 leading-none mobile:hidden">
+          <section className="tablet:flex justify-end w-full px-3 leading-none mobile:hidden ">
             <div
               className="desktop:w-[50rem] tablet:w-[42rem] font-geist-medium uppercase tablet:text-base"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -184,8 +184,8 @@ function Main() {
                 transforming a simple visit into an inspiring journey.
               </h1>
             </div>
-          </div>
-          <div className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end">
+          </section>
+          <section className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end">
             <div className="tablet:w-96 mobile:w-full">
               <img
                 src="/logo-black.svg"
@@ -212,18 +212,18 @@ function Main() {
                 transition: "clip-path 0.3s ease-out",
               }}
             />
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <div className="size-container-ideal">
+        <section className="size-container-ideal">
           <Work />
           <div>
             <MarqueeScrollDirection direction="left" text="since 2003" />
             <MarqueeScrollDirection direction="right" text="from romania" />
           </div>
           <About />
-        </div>
-      </div>
+        </section>
+      </main>
     </>
   );
 }

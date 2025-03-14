@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Main = lazy(() => import("./pages/Main"));
 const SingleProject = lazy(() => import("./pages/SingleProject"));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/projects/:projectLink" element={<SingleProject />} />
+            <Route path="*" element={<NotFound />}/>
           </Routes>
         </Suspense>
       </Router>

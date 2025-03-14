@@ -143,9 +143,9 @@ function SingleProject() {
         onComplete={handleTransitionComplete}
       />
 
-      <div className="size-container-ideal">
+      <main className="size-container-ideal">
         <DynamicCursor />
-        <div id="single-project">
+        <section id="single-project">
           <div className="text-base fixed mobile:hidden tablet:flex uppercase text-[#e2e1df] mix-blend-difference leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
             <a href="/" className="cursor-pointer">
               <h1 className="font-geist-medium " data-cursor="Home">
@@ -199,7 +199,7 @@ function SingleProject() {
             alt={project.projectFirstName}
             className="mt-12 w-full p-3"
           />
-          <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
+          <section className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
             <p className="uppercase">technologies used</p>
             <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase tablet:text-base leading-none mobile:mt-5 tablet:mt-0">
               <div>
@@ -233,13 +233,13 @@ function SingleProject() {
                 <p className="mt-1">{project.deployment}</p>
               </div>
             </div>
-          </div>
+          </section>
           <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
           <Gallery />
-        </div>
+        </section>
 
         <AvailableAt />
-      </div>
+      </main>
     </>
   );
 }

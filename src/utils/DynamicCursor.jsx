@@ -13,7 +13,7 @@ const DynamicCursor = () => {
   useEffect(() => {
     const cursorItem = cursorRef.current;
     const cursorParagraph = cursorParagraphRef.current;
-    const targets = document.querySelectorAll("[data-cursor]"); 
+    const targets = document.querySelectorAll("[data-cursor]");
     const xOffset = 6;
     const yOffset = 140;
 
@@ -41,7 +41,12 @@ const DynamicCursor = () => {
         yPercent = -120;
       }
 
-      gsap.to(cursorItem, { xPercent, yPercent, duration: 0.9, ease: "power3" });
+      gsap.to(cursorItem, {
+        xPercent,
+        yPercent,
+        duration: 0.9,
+        ease: "power3",
+      });
       xTo(cursorX);
       yTo(cursorY - scrollY);
     };
@@ -50,22 +55,26 @@ const DynamicCursor = () => {
       setCurrentTarget(target);
       setCursorVisible(true);
       const newText = target.getAttribute("data-cursor");
-      
-      if (textTimeout) clearTimeout(textTimeout); 
-      setTextTimeout(setTimeout(() => {
-        cursorParagraph.innerHTML = newText;
-        setCursorText(newText);
-      }, 100));
+
+      if (textTimeout) clearTimeout(textTimeout);
+      setTextTimeout(
+        setTimeout(() => {
+          cursorParagraph.innerHTML = newText;
+          setCursorText(newText);
+        }, 100)
+      );
     };
 
     const mouseLeaveHandler = () => {
       setCurrentTarget(null);
       setCursorVisible(false);
-      if (textTimeout) clearTimeout(textTimeout); 
-      setTextTimeout(setTimeout(() => {
-        cursorParagraph.innerHTML = "";
-        setCursorText("");
-      }, 100)); 
+      if (textTimeout) clearTimeout(textTimeout);
+      setTextTimeout(
+        setTimeout(() => {
+          cursorParagraph.innerHTML = "";
+          setCursorText("");
+        }, 100)
+      );
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -78,30 +87,36 @@ const DynamicCursor = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       targets.forEach((target) => {
-        target.removeEventListener("mouseenter", () => mouseEnterHandler(target));
+        target.removeEventListener("mouseenter", () =>
+          mouseEnterHandler(target)
+        );
         target.removeEventListener("mouseleave", mouseLeaveHandler);
       });
     };
   }, [cursorText, textTimeout]);
 
   return (
-    <div>
+    <div
+      className={`cursor ${cursorVisible ? "visible" : ""}`}
+      ref={cursorRef}
+      style={{
+        opacity: cursorVisible ? 1 : 0,
+      }}
+    >
       <div
-        className={`cursor ${cursorVisible ? "visible" : ""}`}
-        ref={cursorRef}
         style={{
-          opacity: cursorVisible ? 1 : 0, 
+          backgroundColor: "#FF4C2F",
+          marginRight: "4px",
+          borderRadius: "2px",
+          padding: "5px",
         }}
       >
-        <div style={{ backgroundColor: "#FF4C2F", marginRight: '4px', borderRadius: '2px', padding: '5px' }}>
-  <img src="/arrow-corner.svg" alt="arrow corner" className="w-5 h-5"/>
-</div>
-
-        <p className="cursor-paragraph" ref={cursorParagraphRef}></p>
+        <img src="/arrow-corner.svg" alt="arrow corner" className="w-5 h-5" />
       </div>
+
+      <p className="cursor-paragraph" ref={cursorParagraphRef}></p>
     </div>
-  ); 
-  
+  );
 };
 
 export default DynamicCursor;
