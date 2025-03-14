@@ -73,7 +73,7 @@ const Menu = () => {
          
           <div className="tablet:ml-10 mobile:-mt-2 tablet:mt-0">
             <p>LOCATION</p>
-            <p className="font-geist-medium">
+            <p className="font-geist-regular">
               IASI, RO, {hours}
               <span className="blink-colon">:</span>
               {minutes} {ampm}
@@ -85,7 +85,7 @@ const Menu = () => {
         <div className="flex flex-col tablet:flex-row mobile:text-2xl tablet:text-sm tablet:items-center tablet:space-y-0 tablet:text-[#e2e1df] mobile:text-[#131313] mobile:p-5 tablet:p-0">
           <div>
             <p>navigation</p>
-            <div className="flex gap-5 font-geist-medium">
+            <div className="flex gap-5 font-geist-regular">
               <p><AnimatedButton text="about" href="#about" /></p>
               <p><AnimatedButton text="work(4)" href="#work" /></p>
               <p><AnimatedButton text="contact" href="#contact" /></p>
