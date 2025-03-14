@@ -186,14 +186,14 @@ function Main() {
             </div>
           </section>
           <section className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end">
-            <div className="tablet:w-96 mobile:w-full">
+            <div className="tablet:w-xl mobile:w-full">
               <img
                 src="/logo-black.svg"
                 alt="logo of the website"
                 className="tablet:w-30 tablet:h-30 mobile:w-20 mobile:h-20 logo-image"
               />
               <p
-                className="mt-5 text-sm font-geist-medium flex flex-wrap flex-1"
+                className="mt-5 text-sm font-geist-medium flex flex-wrap flex-1 uppercase leading-none"
                 ref={addToParagraphsRefs}
               >
                 For me, web development is an art where logic and creativity

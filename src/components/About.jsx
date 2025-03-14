@@ -224,7 +224,7 @@ const About = () => {
           />
         </div>
 
-        <section className="flex flex-col items-stretch font-geist-medium">
+        <section className="flex flex-col items-stretch font-geist-medium uppercase">
           <div className="flex overflow-hidden">
             <img
               ref={mergeRefs(addToRefs, addToAnimationReveal)}
@@ -239,7 +239,7 @@ const About = () => {
             />
           </div>
           <h2
-            className="tracking-tighter uppercase font-geist-medium tablet:text-9xl mobile:text-7xl"
+            className="tracking-tighter font-geist-medium tablet:text-9xl mobile:text-7xl"
             ref={addToKeyRefs}
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
@@ -247,21 +247,21 @@ const About = () => {
           </h2>
           <p className=" text-sm tablet:max-w-2xl mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             I'm Eliza, a Computer Science student at Alexandru Ioan
-            Cuza University, driven by <span className="italic font-geist-regular">creativity and a passion</span> for blending
-            design with technology. As a <span className="italic font-geist-regular">web developer and designer</span>, I love
+            Cuza University, driven by <span className="italic font-geist-regular underline">creativity and a passion</span> for blending
+            design with technology. As a <span className="italic font-geist-regular underline">web developer and designer</span>, I love
             bringing ideas to life through code and motion.
           </p>
-          <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <p className="tablet:max-w-xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             Movement, both in design and life, keeps me inspired—whether it’s
-            <span className="font-geist-regular italic"> skiing, football, or simply staying active.</span> I believe that staying
+            <span className="font-geist-regular italic underline"> skiing, football, or simply staying active.</span> I believe that staying
             energized and adaptable in all aspects of life fuels my creativity
             and approach to problem-solving.
           </p>
           <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            A huge sci-fi fan, I draw inspiration from <span className="italic font-geist-regular">Dune and Star Wars,</span>
-            fascinated by their world-building and futuristic ideas. Just as
+            A huge sci-fi fan, I draw inspiration from <span className="italic font-geist-regular underline">Dune and Star Wars, </span> fascinated by 
+            their world-building and futuristic ideas. Just as
             these stories push creative boundaries, I strive to craft digital
-            experiences that captivate and inspire. I thrive in <span className="italic font-geist-regular">dynamic
+            experiences that captivate and inspire. I thrive in <span className="italic font-geist-regular underline">dynamic
             environments, always eager to learn, adapt, and innovate</span> in the
             ever-evolving world of technology.
           </p>
