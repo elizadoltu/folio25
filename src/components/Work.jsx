@@ -318,11 +318,10 @@ const Work = () => {
                 <div className="h-full w-full overflow-hidden">
                   <img
                     src={bookingImage}
-                    alt=""
+                    alt="booking iasi"
                     ref={addToRefs}
                     data-cursor="More details for Booking Iasi"
-                    className="object-cover w-full h-[110%]"
-                    style={{ transform: "translateY(0)" }}
+                    className="object-cover w-full h-auto"
                   />
                 </div>
               </a>
@@ -343,9 +342,10 @@ const Work = () => {
               <a href="projects/realio-app" className="cursor-pointer">
                 <img
                   src={realioImage}
-                  alt=""
+                  alt="realio - real estate"
                   ref={addToRefs}
                   data-cursor="More details for Realio"
+                  className="object-cover w-full h-auto"
                 />
               </a>
             </div>
@@ -365,9 +365,10 @@ const Work = () => {
               <a href="projects/meowseum">
                 <img
                   src={meowseumImage}
-                  alt=""
+                  alt="meowseum app"
                   ref={addToRefs}
                   data-cursor="More details for Meowseum"
+                  className="object-cover w-full h-auto"
                 />
               </a>
             </div>
@@ -388,8 +389,8 @@ const Work = () => {
             <a href="projects/portfolio-24">
               <img
                 src={portfolioImage}
-                alt=""
-                className="w-full object-cover"
+                alt="portfolio 24"
+                className="object-cover w-full h-auto"
                 ref={addToRefs}
                 data-cursor="More details for Portfolio '24"
               />
