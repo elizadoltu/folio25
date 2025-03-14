@@ -154,7 +154,7 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15, text = "about"
             </div>
   
             <div className="marquee-advanced__item">
-              <p className="marquee__advanced__p marquee__advanced__p--alt uppercase font-kenoky">
+              <p className="marquee__advanced__p marquee__advanced__p--alt uppercase font-kenoky italic">
                 {text}
               </p>
             </div>
