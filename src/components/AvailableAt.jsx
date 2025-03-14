@@ -185,7 +185,7 @@ const AvailableAt = () => {
     if (!project) return <div>Project not found</div>;
 
   return (
-    <div className="mt-[20vh] size-container-ideal">
+    <div className="mt-[20vh] size-container-ideal" id="available-at">
       <h1
         className="desktop:text-11xl tablet:text-10xl mobile:text-5xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex items-center"
         ref={mergeRefs(textFeaturedWorkRef, title)}

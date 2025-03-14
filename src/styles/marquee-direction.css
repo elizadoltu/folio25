@@ -4,6 +4,9 @@
     align-items: center;
     display: flex;
   }
+  .section-resource::selection {
+    background-color: #ff4c24;
+  }
   
   .marquee-advanced {
     width: 100vw;

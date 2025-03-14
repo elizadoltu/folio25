@@ -22,48 +22,48 @@ function SingleProject() {
   );
   const titleRef = useRef(null);
   const projectTitle = useRef(null);
-    const paragraphsRef = useRef([]);
-  
-    const addToParagraphsRefs = (el) => {
-      if (el && !paragraphsRef.current.includes(el)) {
-        paragraphsRef.current.push(el);
-      }
-    };
+  const paragraphsRef = useRef([]);
 
-    useEffect(() => {
-      const revertFunctions = [];
-      
-      paragraphsRef.current.forEach((element) => {
-        if (!element) return;
-        
-        const splitText = new SplitType(element, {
-          types: "lines"
-        });
-        
-        if (splitText.lines && splitText.lines.length > 0) {
-          gsap.from(splitText.lines, {
-            opacity: 0,
-            y: 50,
-            duration: 0.6,
-            stagger: 0.15,
-            delay: 1.4,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 90%",
-              toggleActions: "play none none none",
-            },
-          });
-        }
-        
-        revertFunctions.push(() => splitText.revert());
+  const addToParagraphsRefs = (el) => {
+    if (el && !paragraphsRef.current.includes(el)) {
+      paragraphsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const revertFunctions = [];
+
+    paragraphsRef.current.forEach((element) => {
+      if (!element) return;
+
+      const splitText = new SplitType(element, {
+        types: "lines",
       });
-      
-      return () => {
-        revertFunctions.forEach(revert => revert());
-        paragraphsRef.current = [];
-      };
-    }, []);
+
+      if (splitText.lines && splitText.lines.length > 0) {
+        gsap.from(splitText.lines, {
+          opacity: 0,
+          y: 50,
+          duration: 0.6,
+          stagger: 0.15,
+          delay: 1.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 90%",
+            toggleActions: "play none none none",
+          },
+        });
+      }
+
+      revertFunctions.push(() => splitText.revert());
+    });
+
+    return () => {
+      revertFunctions.forEach((revert) => revert());
+      paragraphsRef.current = [];
+    };
+  }, []);
 
   const mergeRefs =
     (...refs) =>
@@ -107,7 +107,6 @@ function SingleProject() {
     setIsTransitioning(false);
   };
 
-
   useEffect(() => {
     if (project) {
       document.title = `${project.projectFirstName} ${project?.projectSecondName} | Eliza Doltu`;
@@ -135,10 +134,7 @@ function SingleProject() {
     });
   }, []);
 
-
-
   if (!project) return <div>Project not found</div>;
-
 
   return (
     <>
@@ -149,80 +145,99 @@ function SingleProject() {
 
       <div className="size-container-ideal">
         <DynamicCursor />
-        <div className="text-base fixed mobile:hidden tablet:flex uppercase text-[#e2e1df] mix-blend-difference leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
-          <a href="/" className="cursor-pointer">
-            <h1 className="font-geist-medium " data-cursor="Home">
-              <span className="font-kenoky">eliza</span> doltu
+        <div id="single-project">
+          <div className="text-base fixed mobile:hidden tablet:flex uppercase text-[#e2e1df] mix-blend-difference leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
+            <a href="/" className="cursor-pointer">
+              <h1 className="font-geist-medium " data-cursor="Home">
+                <span className="font-kenoky">eliza</span> doltu
+              </h1>
+            </a>
+          </div>
+          <div
+            ref={mergeRefs(titleRef, projectTitle)}
+            className="tablet:fixed text-[#e2e1df] mix-blend-difference tablet:top-0 mobile:top-6 left-0 z-40 w-full flex justify-between uppercase leading-none p-2"
+          >
+            <h1
+              className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-kenoky"
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            >
+              {project.projectFirstName}
             </h1>
-          </a>
-        </div>
-        <div
-          ref={mergeRefs(titleRef, projectTitle)}
-          className="tablet:fixed text-[#e2e1df] mix-blend-difference tablet:top-0 mobile:top-6 left-0 z-40 w-full flex justify-between uppercase leading-none p-2"
-        >
-          
-          <h1
-            className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-kenoky"
-            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-          >
-            {project.projectFirstName}
-          </h1>
-          <h1
-            className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-geist-semibold "
-            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-          >
-            {project.projectSecondName}
-          </h1>
-        </div>
-        <div className="flex mobile:flex-col tablet:flex-row justify-between p-2 tablet:mt-[25vh] mobile:mt-[10vh]">
-          <p className="font-geist-semibold uppercase" ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectDate}</p>
-          <div className="tablet:w-xl mobile:w-full text-sm font-geist-medium">
-            <p ref={addToParagraphsRefs}  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectFirstParagraph}</p>
-            <p ref={addToParagraphsRefs} className="mt-5"  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>{project.projectSecondParagraph}</p>
+            <h1
+              className="desktop:text-11xl tablet:text-10xl mobile:text-4xl font-geist-semibold "
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            >
+              {project.projectSecondName}
+            </h1>
           </div>
-        </div>
-        <img
-          src={project.mainPhoto}
-          alt={project.projectFirstName}
-          className="mt-12 w-full p-3"
-        />
-        <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
-          <p className="uppercase">technologies used</p>
-          <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase tablet:text-base leading-none mobile:mt-5 tablet:mt-0">
-            <div>
-              <p>frontend</p>
-              <p className="mt-1">{project.frontend}</p>
-            </div>
-            {project?.backend ? (
-              <div>
-                <p>backend</p>
-                <p className="mt-1">{project.backend}</p>
-              </div>
-            ) : (
-              <div>
-                <p>design</p>
-                <p className="mt-1">{project?.design}</p>
-              </div>
-            )}
-            {project?.database ? (
-              <div>
-                <p>database</p>
-                <p className="mt-1">{project.database}</p>
-              </div>
-            ) : (
-              <div>
-                <p>animations & scrolling</p>
-                <p className="mt-1">{project?.["animations&scrolling"]}</p>
-              </div>
-            )}
-            <div>
-              <p>deployment</p>
-              <p className="mt-1">{project.deployment}</p>
+          <div className="flex mobile:flex-col tablet:flex-row justify-between p-2 tablet:mt-[25vh] mobile:mt-[10vh]">
+            <p
+              className="font-geist-semibold uppercase"
+              ref={addToParagraphsRefs}
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            >
+              {project.projectDate}
+            </p>
+            <div className="tablet:w-xl mobile:w-full text-sm font-geist-medium">
+              <p
+                ref={addToParagraphsRefs}
+                style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+              >
+                {project.projectFirstParagraph}
+              </p>
+              <p
+                ref={addToParagraphsRefs}
+                className="mt-5"
+                style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+              >
+                {project.projectSecondParagraph}
+              </p>
             </div>
           </div>
+          <img
+            src={project.mainPhoto}
+            alt={project.projectFirstName}
+            className="mt-12 w-full p-3"
+          />
+          <div className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
+            <p className="uppercase">technologies used</p>
+            <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase tablet:text-base leading-none mobile:mt-5 tablet:mt-0">
+              <div>
+                <p>frontend</p>
+                <p className="mt-1">{project.frontend}</p>
+              </div>
+              {project?.backend ? (
+                <div>
+                  <p>backend</p>
+                  <p className="mt-1">{project.backend}</p>
+                </div>
+              ) : (
+                <div>
+                  <p>design</p>
+                  <p className="mt-1">{project?.design}</p>
+                </div>
+              )}
+              {project?.database ? (
+                <div>
+                  <p>database</p>
+                  <p className="mt-1">{project.database}</p>
+                </div>
+              ) : (
+                <div>
+                  <p>animations & scrolling</p>
+                  <p className="mt-1">{project?.["animations&scrolling"]}</p>
+                </div>
+              )}
+              <div>
+                <p>deployment</p>
+                <p className="mt-1">{project.deployment}</p>
+              </div>
+            </div>
+          </div>
+          <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
+          <Gallery />
         </div>
-        <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
-        <Gallery />
+
         <AvailableAt />
       </div>
     </>

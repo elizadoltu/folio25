@@ -2,7 +2,6 @@ import React, { useEffect, useRef, lazy, Suspense } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import "../index.css";
 const Contact = lazy(() => import('../components/Contact'));
 
 gsap.registerPlugin(ScrollTrigger);

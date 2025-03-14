@@ -12,16 +12,12 @@ import PageFadeSequence from "../animations/PageFadeSequence";
 gsap.registerPlugin(ScrollTrigger);
 
 function Main() {
-  
-
   const [isTransitionActive, setIsTransitionActive] = useState(true);
   const [contentVisible, setContentVisible] = useState(false);
 
   const handleTransitionComplete = () => {
     setContentVisible(true);
   };
-  
-  
 
   const imageAnimationRevealRef = useRef(null);
   const paragraphsRef = useRef([]);
@@ -32,7 +28,6 @@ function Main() {
       paragraphsRef.current.push(el);
     }
   };
-
 
   useEffect(() => {
     gsap.fromTo(
@@ -136,82 +131,95 @@ function Main() {
 
   return (
     <>
-  <PageFadeSequence 
-        isActive={isTransitionActive} 
+      <PageFadeSequence
+        isActive={isTransitionActive}
         onComplete={() => {
           setIsTransitionActive(false);
           handleTransitionComplete();
-        }} 
+        }}
       />
-      
+
       <div className="size-container-ideal relative">
         <DynamicCursor />
         <Menu />
-        <div data-cursor="scroll for more">
+        <div data-cursor="scroll for more" id="landing">
           <div
-          className="uppercase tablet:mt-10 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
-          ref={titleRef}
-        >
-          <h1
-            className="font-kenoky"
-            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            className="uppercase tablet:mt-10 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
+            ref={titleRef}
           >
-            eliza
-          </h1>
-
-          <h1
-            className="font-geist-medium tracking-tighter"
-            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-          >
-            doltu
-          </h1>
-        </div>
-        <div className="tablet:flex justify-end w-full px-3 leading-none mobile:hidden">
-          <div className="desktop:w-[50rem] tablet:w-[42rem] font-geist-medium uppercase tablet:text-base" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            <h1 className="leading-none" ref={addToParagraphsRefs}>Websites are more than just functional spaces—they're immersive experiences</h1>
-            <h1 className="leading-none" ref={addToParagraphsRefs}>where visuals, typography and motion come together to tell a story, evoke emotions and create memorable interactions.</h1>
-            <h1 className="leading-none text-right" ref={addToParagraphsRefs}>Every element, from the smallest detail to the overall design</h1>
-            <h1 className="leading-none" ref={addToParagraphsRefs}>plays a role in shaping how users feel and engage</h1>
-            <h1 className="leading-none" ref={addToParagraphsRefs}>transforming a simple visit into an inspiring journey.</h1>
-          </div>
-        </div>
-        <div className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end" >
-          <div className="tablet:w-96 mobile:w-full">
-            <img
-              src="/logo-black.svg"
-              alt="logo of the website"
-              className="tablet:w-30 tablet:h-30 mobile:w-20 mobile:h-20 logo-image"
-            />
-            <p
-              className="mt-5 text-sm font-geist-medium flex flex-wrap flex-1"
-              ref={addToParagraphsRefs}
+            <h1
+              className="font-kenoky"
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              For me, web development is an art where logic and creativity meet. I
-              enjoy crafting sleek interfaces, dynamic interactions, and intuitive
-              designs that not only look good but feel seamless and engaging.
-            </p>
-          </div>
-            <img
-            src="/profile-1.svg"
-            alt="eliza teodora doltu"
-            ref={imageAnimationRevealRef}
-            className="mobile:w-full tablet:w-auto"
-            style={{
-              clipPath: "inset(0 100% 0 0)",
-              transition: "clip-path 0.3s ease-out",
-            }}
-          />
-          
-        </div>
-        </div>
-        
-        <div className="size-container-ideal">
-          
+              eliza
+            </h1>
 
+            <h1
+              className="font-geist-medium tracking-tighter"
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            >
+              doltu
+            </h1>
+          </div>
+          <div className="tablet:flex justify-end w-full px-3 leading-none mobile:hidden">
+            <div
+              className="desktop:w-[50rem] tablet:w-[42rem] font-geist-medium uppercase tablet:text-base"
+              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            >
+              <h1 className="leading-none" ref={addToParagraphsRefs}>
+                Websites are more than just functional spaces—they're immersive
+                experiences
+              </h1>
+              <h1 className="leading-none" ref={addToParagraphsRefs}>
+                where visuals, typography and motion come together to tell a
+                story, evoke emotions and create memorable interactions.
+              </h1>
+              <h1 className="leading-none text-right" ref={addToParagraphsRefs}>
+                Every element, from the smallest detail to the overall design
+              </h1>
+              <h1 className="leading-none" ref={addToParagraphsRefs}>
+                plays a role in shaping how users feel and engage
+              </h1>
+              <h1 className="leading-none" ref={addToParagraphsRefs}>
+                transforming a simple visit into an inspiring journey.
+              </h1>
+            </div>
+          </div>
+          <div className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end">
+            <div className="tablet:w-96 mobile:w-full">
+              <img
+                src="/logo-black.svg"
+                alt="logo of the website"
+                className="tablet:w-30 tablet:h-30 mobile:w-20 mobile:h-20 logo-image"
+              />
+              <p
+                className="mt-5 text-sm font-geist-medium flex flex-wrap flex-1"
+                ref={addToParagraphsRefs}
+              >
+                For me, web development is an art where logic and creativity
+                meet. I enjoy crafting sleek interfaces, dynamic interactions,
+                and intuitive designs that not only look good but feel seamless
+                and engaging.
+              </p>
+            </div>
+            <img
+              src="/profile-1.svg"
+              alt="eliza teodora doltu"
+              ref={imageAnimationRevealRef}
+              className="mobile:w-full tablet:w-auto"
+              style={{
+                clipPath: "inset(0 100% 0 0)",
+                transition: "clip-path 0.3s ease-out",
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="size-container-ideal">
           <Work />
           <div>
-            <MarqueeScrollDirection direction="left" text="since 2003"/>
-            <MarqueeScrollDirection direction="right"  text="from romania"/>
+            <MarqueeScrollDirection direction="left" text="since 2003" />
+            <MarqueeScrollDirection direction="right" text="from romania" />
           </div>
           <About />
         </div>

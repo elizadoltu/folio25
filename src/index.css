@@ -44,15 +44,16 @@ body {
   overflow-x: hidden;
 }
 
-#work::selection, 
-#about::selection, 
-#contact::selection {
-  background-color: var(--background-color);
-  color: var(--font-color);
+#landing::selection, #single-project::selection {
+  background-color: var(--font-color);
+  color: var(--background-color);
 }
 
-::selection {
-  background-color: var(--font-color);
+#work::selection, 
+#about::selection, 
+#contact::selection,
+#available-at::selection {
+  background-color: #FF4C2F;
   color: var(--background-color);
 }
 
