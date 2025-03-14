@@ -53,8 +53,8 @@ body {
 #about::selection, 
 #contact::selection,
 #available-at::selection {
-  background-color: #FF4C2F;
-  color: var(--background-color);
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 
