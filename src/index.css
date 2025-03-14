@@ -44,10 +44,18 @@ body {
   overflow-x: hidden;
 }
 
+#work::selection, 
+#about::selection, 
+#contact::selection {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
 ::selection {
   background-color: var(--font-color);
   color: var(--background-color);
 }
+
 
 @media screen and (max-width: 991px) {
   :root {

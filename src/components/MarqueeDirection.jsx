@@ -5,9 +5,8 @@ import "../styles/marquee-direction.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MARQUEE_TEXT = "about";
 
-const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
+const MarqueeScrollDirection = ({ direction = "left", speed = 15, text = "about" }) => {
   const marqueeRef = useRef(null);
   const marqueeScrollRef = useRef(null);
   const marqueeCollectionRef = useRef(null);
@@ -131,11 +130,20 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
             className="marquee-advanced__collection"
           >
             <div className="marquee-advanced__item">
+              <img
+                src="/logo-white.svg"
+                alt="Marquee icon"
+                className="marquee__advanced__img"
+                loading="eager"
+              />
+            </div>
+  
+            <div className="marquee-advanced__item">
               <p className="marquee__advanced__p font-geist-medium tracking-tighter uppercase">
-                {MARQUEE_TEXT}{" "}
+                {text}
               </p>
             </div>
-
+  
             <div className="marquee-advanced__item">
               <img
                 src="/logo-white.svg"
@@ -144,10 +152,10 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
                 loading="eager"
               />
             </div>
-
+  
             <div className="marquee-advanced__item">
               <p className="marquee__advanced__p marquee__advanced__p--alt uppercase font-kenoky">
-                {MARQUEE_TEXT}{" "}
+                {text}
               </p>
             </div>
           </div>
@@ -155,6 +163,9 @@ const MarqueeScrollDirection = ({ direction = "left", speed = 15 }) => {
       </div>
     </section>
   );
+  
+  
+  
 };
 
 export default MarqueeScrollDirection;

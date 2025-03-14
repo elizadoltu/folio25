@@ -2,6 +2,7 @@ import React, { useEffect, useRef, lazy, Suspense } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+import "../index.css";
 const Contact = lazy(() => import('../components/Contact'));
 
 gsap.registerPlugin(ScrollTrigger);
@@ -246,9 +247,9 @@ const About = () => {
             <span className="font-kenoky">who</span> am i?
           </h1>
           <p className=" text-sm tablet:max-w-2xl mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            Who am I? I'm Eliza, a Computer Science student at Alexandru Ioan
-            Cuza University, driven by creativity and a passion for blending
-            design with technology. As a web developer and designer, I love
+            I'm Eliza, a Computer Science student at Alexandru Ioan
+            Cuza University, driven by <span className="italic font-geist-regular">creativity and a passion</span> for blending
+            design with technology. As a <span className="italic font-geist-regular">web developer and designer</span>, I love
             bringing ideas to life through code and motion.
           </p>
           <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>

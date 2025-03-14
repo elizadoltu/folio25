@@ -210,8 +210,8 @@ function Main() {
 
           <Work />
           <div>
-            <MarqueeScrollDirection direction="left" />
-            <MarqueeScrollDirection direction="right" />
+            <MarqueeScrollDirection direction="left" text="since 2003"/>
+            <MarqueeScrollDirection direction="right"  text="from romania"/>
           </div>
           <About />
         </div>
