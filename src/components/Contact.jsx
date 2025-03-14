@@ -77,15 +77,15 @@ const Contact = () => {
         </h1>
       </section>
       <section className="flex flex-1 flex-wrap flex-col items-end px-3 leading-none tablet:text-base uppercase">
-        <h1 className=" leading-none">
+        <p className=" leading-none">
           <span className="underline font-kenoky">let's connect</span> :Whether
           you have a question
-        </h1>
-        <h1 className="leading-none">
+        </p>
+        <p className="leading-none">
           {" "}
           need assistance, or want to explore opportunities
-        </h1>
-        <h1 className="leading-none">i am here to help.</h1>
+        </p>
+        <p className="leading-none">i am here to help.</p>
       </section>
 
       <section className="size-container-ideal flex mobile:flex-col tablet:flex-row justify-between items-end mt-[20vh] p-3 text-[#e2e1df]">

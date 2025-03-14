@@ -75,12 +75,12 @@ const PageFadeSequence = ({ isActive, onComplete }) => {
   return (
     <div className="page-fade-sequence__container" ref={sequenceContainerRef}>
       <div className="page-fade-sequence__text-wrapper uppercase font-geist-semibold tablet:text-4xl mobile:text-2xl">
-        <h1 ref={headingRef1} className="page-fade-sequence__heading" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+        <h2 ref={headingRef1} className="page-fade-sequence__heading" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
           web <span className="font-kenoky">dev</span>
-        </h1>
-        <h1 ref={headingRef2} className="page-fade-sequence__subheading ml-2" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+        </h2>
+        <h2 ref={headingRef2} className="page-fade-sequence__subheading ml-2" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
           <span className="font-kenoky">& developer</span> based in iasi
-        </h1>
+        </h2>
       </div>
 
       {Array.from({ length: 5 }, (_, index) => (

@@ -148,9 +148,9 @@ function SingleProject() {
         <section id="single-project">
           <div className="text-base fixed mobile:hidden tablet:flex uppercase text-[#e2e1df] mix-blend-difference leading-none left-1/2 top-0 mt-3 -translate-x-1/2 z-50">
             <a href="/" className="cursor-pointer">
-              <h1 className="font-geist-medium " data-cursor="Home">
+              <h4 className="font-geist-medium " data-cursor="Home">
                 <span className="font-kenoky">eliza</span> doltu
-              </h1>
+              </h4>
             </a>
           </div>
           <div

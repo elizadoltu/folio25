@@ -183,21 +183,21 @@ const About = () => {
         ref={addToKeyRefs}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <h1 className="font-geist-medium tracking-tighter">
+        <h3 className="font-geist-medium tracking-tighter">
           <span className="font-kenoky">technology</span> & creativity
-        </h1>
+        </h3>
       </div>
       <div
         className="flex flex-col items-center tablet:text-6xl mobile:text-4xl uppercase tracking-tighter"
         ref={addToKeyRefs}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <h1 className="font-geist-medium">
+        <h3 className="font-geist-medium">
           engaging digital <span className="font-kenoky">experiences</span>
-        </h1>
+        </h3>
         <div className="flex justify-between">
-          <h1 className="font-kenoky">learn;experiment</h1>
-          <h1 className="font-geist-medium ml-30">&refine</h1>
+          <h3 className="font-kenoky">learn;experiment</h3>
+          <h3 className="font-geist-medium ml-30">&refine</h3>
         </div>
       </div>
       <div
@@ -205,15 +205,15 @@ const About = () => {
         ref={addToKeyRefs}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
       >
-        <h1>
+        <h3>
           functionality <span className="font-kenoky">& aesthetics</span>
-        </h1>
+        </h3>
       </div>
       <section className="grid tablet:grid-cols-2 mobile:grid-cols-1 w-full gap-5 mt-[10vh]">
         <div className="flex items-stretch overflow-hidden">
           <img
             ref={mergeRefs(addToRefs, addToAnimationReveal)}
-            src="/profile-3.svg"
+            src="/profile-2.webp"
             alt="eliza teodora doltu skiing"
             className="w-full h-[500px] object-cover"
             data-cursor="Who doesn't love skiing?"
@@ -228,7 +228,7 @@ const About = () => {
           <div className="flex overflow-hidden">
             <img
               ref={mergeRefs(addToRefs, addToAnimationReveal)}
-              src="/profile-2.svg"
+              src="/profile-3.webp"
               alt="eliza - teodora doltu"
               className="w-full h-[500px] object-cover"
               data-cursor="James Bond style"
@@ -238,13 +238,13 @@ const About = () => {
               }}
             />
           </div>
-          <h1
+          <h2
             className="tracking-tighter uppercase font-geist-medium tablet:text-9xl mobile:text-7xl"
             ref={addToKeyRefs}
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             <span className="font-kenoky">who</span> am i?
-          </h1>
+          </h2>
           <p className=" text-sm tablet:max-w-2xl mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             I'm Eliza, a Computer Science student at Alexandru Ioan
             Cuza University, driven by <span className="italic font-geist-regular">creativity and a passion</span> for blending
@@ -253,16 +253,16 @@ const About = () => {
           </p>
           <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             Movement, both in design and life, keeps me inspired—whether it’s
-            skiing, football, or simply staying active. I believe that staying
+            <span className="font-geist-regular italic"> skiing, football, or simply staying active.</span> I believe that staying
             energized and adaptable in all aspects of life fuels my creativity
             and approach to problem-solving.
           </p>
           <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            A huge sci-fi fan, I draw inspiration from Dune and Star Wars,
+            A huge sci-fi fan, I draw inspiration from <span className="italic font-geist-regular">Dune and Star Wars,</span>
             fascinated by their world-building and futuristic ideas. Just as
             these stories push creative boundaries, I strive to craft digital
-            experiences that captivate and inspire. I thrive in dynamic
-            environments, always eager to learn, adapt, and innovate in the
+            experiences that captivate and inspire. I thrive in <span className="italic font-geist-regular">dynamic
+            environments, always eager to learn, adapt, and innovate</span> in the
             ever-evolving world of technology.
           </p>
         </section>
@@ -270,9 +270,9 @@ const About = () => {
 
       <div className="uppercase mt-[10vh] tablet:flex gap-10 text-base font-geist-semibold">
         <div>
-          <h1 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <h3 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             honors & awards
-          </h1>
+          </h3>
           <div className="mt-5 leading-none uppercase" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             <p ref={addToParagraphsRefs}>
               young jury - awwwards &#40;2025&#41;
@@ -280,14 +280,13 @@ const About = () => {
             <p ref={addToParagraphsRefs}>
               honors - portfolio 24' &#40;2024&#41;
             </p>
-            {/* <p ref={addToParagraphsRefs}>honors - meowseum &#40;2025&#41;</p> */}
             <p ref={addToParagraphsRefs}>judge awards - ftc &#40;2019&#41;</p>
           </div>
         </div>
         <div className="mobile:mt-10 tablet:mt-0">
-          <h1 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <h3 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
             skills
-          </h1>
+          </h3>
           <div className="flex gap-5 leading-none mt-5">
             <div>
               <p ref={addToParagraphsRefs}>react</p>

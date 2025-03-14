@@ -166,23 +166,23 @@ function Main() {
               className="desktop:w-[50rem] tablet:w-[42rem] font-geist-medium uppercase tablet:text-base"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <h1 className="leading-none" ref={addToParagraphsRefs}>
+              <p className="leading-none" ref={addToParagraphsRefs}>
                 Websites are more than just functional spaces—they're immersive
                 experiences
-              </h1>
-              <h1 className="leading-none" ref={addToParagraphsRefs}>
+              </p>
+              <p className="leading-none" ref={addToParagraphsRefs}>
                 where visuals, typography and motion come together to tell a
                 story, evoke emotions and create memorable interactions.
-              </h1>
-              <h1 className="leading-none text-right" ref={addToParagraphsRefs}>
+              </p>
+              <p className="leading-none text-right" ref={addToParagraphsRefs}>
                 Every element, from the smallest detail to the overall design
-              </h1>
-              <h1 className="leading-none" ref={addToParagraphsRefs}>
+              </p>
+              <p className="leading-none" ref={addToParagraphsRefs}>
                 plays a role in shaping how users feel and engage
-              </h1>
-              <h1 className="leading-none" ref={addToParagraphsRefs}>
+              </p>
+              <p className="leading-none" ref={addToParagraphsRefs}>
                 transforming a simple visit into an inspiring journey.
-              </h1>
+              </p>
             </div>
           </section>
           <section className="tablet:mt-[22vh] mobile:mt-[10vh] p-5 tablet:flex justify-between items-end">
@@ -203,10 +203,10 @@ function Main() {
               </p>
             </div>
             <img
-              src="/profile-1.svg"
+              src="/profile-1.webp"
               alt="eliza teodora doltu"
               ref={imageAnimationRevealRef}
-              className="mobile:w-full tablet:w-auto"
+              className="mobile:w-full tablet:w-64"
               style={{
                 clipPath: "inset(0 100% 0 0)",
                 transition: "clip-path 0.3s ease-out",

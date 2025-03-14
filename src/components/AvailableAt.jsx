@@ -273,9 +273,9 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;Design&#41;</p>
-                    <h1 className="font-kenoky tablet:text-9xl mobile:text-6xl">
+                    <h2 className="font-kenoky tablet:text-9xl mobile:text-6xl">
                       {project?.liveAt || project.design}
-                    </h1>
+                    </h2>
                   </div>
                 </div>
               </a>
@@ -320,7 +320,7 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;Code&#41;</p>
-                    <h1 className="font-kenoky tablet:text-9xl mobile:text-6xl">{project.code}</h1>
+                    <h2 className="font-kenoky tablet:text-9xl mobile:text-6xl">{project.code}</h2>
                   </div>
                 </div>
               </a>
@@ -366,7 +366,7 @@ const AvailableAt = () => {
                   <div className="absolute top-5 left-5 bottom-5 right-5 bg-[#2e2e2e] opacity-90"></div>
                   <div className="absolute top-1/2 left-1/2 text-[#E2E1DF] flex flex-col items-center uppercase -translate-x-1/2 -translate-y-1/2">
                     <p>&#40;next project&#41;</p>
-                    <h1 className="font-kenoky tablet:text-9xl mobile:text-4xl">{nextProject.projectFirstName}</h1>
+                    <h2 className="font-kenoky tablet:text-9xl mobile:text-4xl">{nextProject.projectFirstName}</h2>
                   </div>
                 </div>
               
