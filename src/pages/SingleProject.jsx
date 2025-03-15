@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import projectsData from "../data/projects";
 import "../styles/button-bubble.css";
@@ -10,8 +10,11 @@ import "../styles/reveal-animation.css";
 import SplitType from "split-type";
 import AvailableAt from "../components/AvailableAt";
 import Gallery from "../components/Gallery";
+import { bouncy } from "ldrs";
 
+const NotFound = lazy(() => import("./NotFound"));
 gsap.registerPlugin(ScrollTrigger);
+bouncy.register();
 
 function SingleProject() {
   const { projectLink } = useParams();
@@ -134,7 +137,7 @@ function SingleProject() {
     });
   }, []);
 
-  if (!project) return <div>Project not found</div>;
+  if (!project) return (<Suspense fallback={<div className="flex justify-center items-center bg-[#131313]"><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}><NotFound /></Suspense>);
 
   return (
     <>

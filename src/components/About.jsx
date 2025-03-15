@@ -2,9 +2,11 @@ import React, { useEffect, useRef, lazy, Suspense } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+import { bouncy } from "ldrs";
 const Contact = lazy(() => import('../components/Contact'));
 
 gsap.registerPlugin(ScrollTrigger);
+bouncy.register();
 
 const About = () => {
   const imageRefs = useRef([]);
@@ -304,7 +306,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="flex justify-center items-center bg-[#131313]"><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
   <Contact />
 </Suspense>
 

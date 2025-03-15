@@ -7,8 +7,10 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { bouncy } from "ldrs";
 
 gsap.registerPlugin(ScrollTrigger);
+bouncy.register();
 
 const Main = lazy(() => import("./pages/Main"));
 const SingleProject = lazy(() => import("./pages/SingleProject"));
@@ -36,7 +38,7 @@ function App() {
   return (
     <ParallaxProvider>
       <Router>
-        <Suspense fallback={<div className="bg-[#131313] text-[#e2e1df] flex justify-center items-center h-screen w-full">Loading...</div>}>
+        <Suspense fallback={<div className="flex justify-center items-center bg-[#131313]"><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/projects/:projectLink" element={<SingleProject />} />

@@ -9,8 +9,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import "../styles/reveal-animation.css";
 import { useParallax } from "react-scroll-parallax";
 import SplitType from "split-type";
+import { bouncy } from "ldrs";
 
 gsap.registerPlugin(ScrollTrigger);
+bouncy.register();
 
 const AvailableAt = () => {
   const { projectLink } = useParams();
@@ -385,13 +387,11 @@ const AvailableAt = () => {
               />
             </div>
           </div>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div className="flex justify-center items-center bg-[#131313]"><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
           <BubbleButton nextProject={nextProject} projectColor={project.color} />
-
+<Contact />
         </Suspense>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Contact />
-        </Suspense>
+          
       </section>
     </main>
   );

@@ -13,7 +13,7 @@ function NotFound() {
           alt="arrow corner icon"
           className="w-6 h-6 mr-2"
         />
-        <AnimatedButton href="/" text="go back home" />
+        <AnimatedButton href="/" text="go back home" isInternalLink={true}/>
       </p>
     </section>
   );

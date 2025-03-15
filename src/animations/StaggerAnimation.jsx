@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/stagger-animation.css";
 
-const AnimatedButton = ({ text, href }) => {
+const AnimatedButton = ({ text, href, isInternalLink }) => {
   const handleClick = (e) => {
     if (href && href.startsWith('#')) {
       e.preventDefault();
@@ -18,9 +18,9 @@ const AnimatedButton = ({ text, href }) => {
       href={href} 
       aria-label={text} 
       className="w-inline-block btn-animate-chars" 
-      target={href && !href.startsWith('#') ? "_blank" : undefined}
+      target={!isInternalLink && href && !href.startsWith('#') ? "_blank" : undefined}
       onClick={handleClick}
-      rel="noopener"
+      rel={!isInternalLink && href && !href.startsWith('#') ? "noopener" : undefined}
     >
       <span data-button-animate-chars className="btn-animate-chars__text">
         {text.split("").map((char, index) => (
@@ -36,6 +36,11 @@ const AnimatedButton = ({ text, href }) => {
 AnimatedButton.propTypes = {
   text: PropTypes.string.isRequired,
   href: PropTypes.string,
+  isInternalLink: PropTypes.bool,
+};
+
+AnimatedButton.defaultProps = {
+  isInternalLink: false,
 };
 
 export default AnimatedButton;
