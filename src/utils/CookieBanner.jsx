@@ -47,22 +47,22 @@ const CookieBanner = () => {
 
   return (
     <div
-      className="cookie-banner font-geist-medium uppercase text-sm mobile:flex flex-col tablet:flex-row fixed bottom-3 left-1/2 -translate-x-1/2 bg-[#131313] text-[#e2e1df] p-3 z-50 rounded-lg max-w-[90%] tablet:max-w-[400px]"
+      className="cookie-banner font-geist-medium uppercase text-sm mobile:flex justify-center items-center flex-col tablet:flex-row fixed bottom-3 left-1/2 -translate-x-1/2 bg-[#131313] text-[#e2e1df] p-2 z-50 rounded-lg mobile:w-full tablet:w-auto"
       ref={cookieBannerRef}
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
     >
       <p className="tablet:mb-0 text-center tablet:text-left">
-        We use cookies for analytics.
+      We use cookies to improve your experience and analyze how our site is used.
       </p>
-      <div className="flex flex-col tablet:flex-row gap-2 tablet:gap-4 justify-center tablet:justify-start w-full mt-3">
+      <div className="flex flex-row gap-2 tablet:gap-2 justify-center tablet:justify-start mobile:mt-2 tablet:mt-0 ml-2">
         <button
-          className="px-4 py-2 bg-[#e2e1df] text-[#131313] rounded uppercase text-xs tablet:text-sm w-full tablet:w-auto"
+          className="px-2 py-2 bg-[#e2e1df] text-[#131313] rounded uppercase text-xs "
           onClick={() => handleConsent(true)}
         >
           accept
         </button>
         <button
-          className="px-4 py-2 bg-[#FF4C2F] rounded uppercase text-xs tablet:text-sm w-full tablet:w-auto"
+          className="px-2 py-2 bg-[#FF4C2F] rounded uppercase text-xs"
           onClick={() => handleConsent(false)}
         >
           decline
