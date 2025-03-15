@@ -118,70 +118,80 @@
   </script>
   <script>
     function addSchemaForPage() {
-      const projectDescriptions = {
-        "booking-iasi":
-          "Discover the Booking Iași project, an intuitive and efficient booking system featuring user profile creation, 3D visualizations, and secure local deployment with Docker.",
-        "realio-app":
-          "Explore the Realio App, a smart property management platform utilizing machine learning for market insights, built with Angular and a secure .NET backend architecture.",
-        meowseum:
-          "Dive into Meowseum, an interactive platform celebrating feline photography with smooth animations, responsive design, and seamless user experience powered by React and GSAP.",
-        "portfolio-24":
-          "Check out Portfolio 24 by Eliza Doltu, a personal website featuring smooth scrolling, dynamic animations, and an engaging design optimized for SEO and performance.",
-      };
-
       const pageSchemas = {
         "/": {
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Eliza Doltu | Web Developer & Designer",
-          url: "https://elizadoltuofficial.net/",
-          description:
-            "Portfolio of Eliza Doltu, a creative web developer and designer crafting immersive digital experiences.",
-          potentialAction: {
+          "name": "Eliza Doltu | Web Developer & Designer",
+          "url": "https://elizadoltuofficial.net/",
+          "description": "Portfolio of Eliza Doltu, a creative web developer and designer crafting immersive digital experiences.",
+          "potentialAction": {
             "@type": "SearchAction",
-            target: "https://elizadoltuofficial.net/?q={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
+            "target": "https://elizadoltuofficial.net/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
         },
-        "/projects/:projectLink": {
+        "/projects/booking-iasi": {
           "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: "Project Details | Eliza Doltu",
-          url: "https://elizadoltuofficial.net/projects/{projectLink}",
-          description:
-            "Detailed insights into Eliza Doltu's creative projects, showcasing innovative web design and development.",
+          "@type": "SoftwareApplication",
+          "name": "Booking Iași",
+          "applicationCategory": "BookingApplication",
+          "operatingSystem": "Web",
+          "description": "An intuitive and efficient booking system featuring user profile creation, 3D visualizations, and secure local deployment with Docker.",
+          "url": "https://elizadoltuofficial.net/projects/booking-iasi",
+          "author": {
+            "@type": "Person",
+            "name": "Eliza Doltu"
+          }
         },
+        "/projects/realio-app": {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Realio App",
+          "applicationCategory": "PropertyManagementApplication",
+          "operatingSystem": "Web",
+          "description": "A smart property management platform utilizing machine learning for market insights, built with Angular and a secure .NET backend architecture.",
+          "url": "https://elizadoltuofficial.net/projects/realio-app",
+          "author": {
+            "@type": "Person",
+            "name": "Eliza Doltu"
+          }
+        },
+        "/projects/meowseum": {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Meowseum",
+          "url": "https://elizadoltuofficial.net/projects/meowseum",
+          "description": "An interactive platform celebrating feline photography with smooth animations, responsive design, and seamless user experience powered by React and GSAP.",
+          "author": {
+            "@type": "Person",
+            "name": "Eliza Doltu"
+          }
+        },
+        "/projects/portfolio-24": {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Portfolio 24 by Eliza Doltu",
+          "url": "https://elizadoltuofficial.net/projects/portfolio-24",
+          "description": "A personal website featuring smooth scrolling, dynamic animations, and an engaging design optimized for SEO and performance.",
+          "author": {
+            "@type": "Person",
+            "name": "Eliza Doltu"
+          }
+        }
       };
-
+  
       const path = window.location.pathname;
       let schema = pageSchemas[path] || pageSchemas["/"];
-
-      if (path.startsWith("/projects/")) {
-        const projectLink = path.split("/projects/")[1];
-        schema = {
-          ...pageSchemas["/projects/:projectLink"],
-          url: `https://elizadoltuofficial.net/projects/${encodeURIComponent(
-            projectLink
-          )}`,
-          name: `${projectLink.replace(/-/g, " ")} | Eliza Doltu`,
-          description:
-            projectDescriptions[projectLink] ||
-            "Discover innovative projects by Eliza Doltu, showcasing creativity in web design and development.",
-        };
-
-        if (!projectDescriptions[projectLink]) {
-          console.warn(`No description found for project: ${projectLink}`);
-        }
-      }
-
+  
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.textContent = JSON.stringify(schema, null, 2);
       document.head.appendChild(script);
     }
-
+  
     document.addEventListener("DOMContentLoaded", addSchemaForPage);
-  </script>
+  </script>  
 
   <body>
     <div id="root"></div>
