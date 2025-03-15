@@ -38,7 +38,7 @@ function App() {
   return (
     <ParallaxProvider>
       <Router>
-        <Suspense fallback={<div className="flex justify-center items-center bg-[#131313]"><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
+        <Suspense fallback={<div className="w-full h-screen flex flex-col justify-center items-center bg-[#131313] text-[#e2e1df] uppercase font-geist-medium"><h4 className="mb-5">Loading</h4><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/projects/:projectLink" element={<SingleProject />} />
