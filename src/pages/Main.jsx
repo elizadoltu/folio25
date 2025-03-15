@@ -8,6 +8,7 @@ import Work from "../components/Work";
 import DynamicCursor from "../utils/DynamicCursor";
 import SplitType from "split-type";
 import PageFadeSequence from "../animations/PageFadeSequence";
+import CookieBanner from "../utils/CookieBanner";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -143,6 +144,7 @@ function Main() {
         <DynamicCursor />
         <Menu />
         <section data-cursor="scroll for more" id="landing">
+          <CookieBanner />
           <div
             className="uppercase tablet:mt-10 mobile:mt-40 desktop:text-12xl tablet:text-11xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
             ref={titleRef}

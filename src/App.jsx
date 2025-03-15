@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from "react";
+import React, { useEffect, lazy, Suspense, useState } from "react";
 import "./index.css";
 import "./global/geist.css";
 import "./global/kenoky.css";
@@ -17,6 +17,7 @@ const SingleProject = lazy(() => import("./pages/SingleProject"));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
+
   useEffect(() => {
     const lenis = new Lenis();
     lenis.on("scroll", () => {
@@ -39,6 +40,7 @@ function App() {
     <ParallaxProvider>
       <Router>
         <Suspense fallback={<div className="w-full h-screen flex flex-col justify-center items-center bg-[#131313] text-[#e2e1df] uppercase font-geist-medium"><h4 className="mb-5">Loading</h4><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
+      
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/projects/:projectLink" element={<SingleProject />} />
