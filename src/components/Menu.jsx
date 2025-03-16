@@ -25,6 +25,25 @@ const Menu = () => {
     return () => cancelAnimationFrame(animationFrame);
   }, [updateTime]);
 
+  useEffect(() => {
+    const handleNavClick = (e) => {
+      if (e.target.closest('a[href^="#"]')) {
+        setIsOpen(false);
+      }
+    };
+
+    const navContainer = document.querySelector('.flex.gap-5.font-geist-regular');
+    if (navContainer) {
+      navContainer.addEventListener('click', handleNavClick);
+    }
+
+    return () => {
+      if (navContainer) {
+        navContainer.removeEventListener('click', handleNavClick);
+      }
+    };
+  }, []);
+
   const hours = time.format("hh");
   const minutes = time.format("mm");
   const ampm = time.format("A");

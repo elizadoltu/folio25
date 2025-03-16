@@ -18,17 +18,16 @@ const Work = () => {
   const paragraphsRef = useRef([]);
   const parallaxConfig = {
     image: {
-      translateY: [0, 0], 
-      speed: 8, 
+      translateY: [0, 0],
+      speed: 8,
       easing: "easeInOutQuad",
     },
     text: {
-      translateY: [-40, 70], 
+      translateY: [-40, 70],
       speed: 2,
-      easing: "easeInOutQuad"
-    }
+      easing: "easeInOutQuad",
+    },
   };
-  
 
   const { ref: title } = useParallax(parallaxConfig.text);
   const { ref: image } = useParallax(parallaxConfig.image);
@@ -39,15 +38,17 @@ const Work = () => {
     }
   };
 
-  const mergeRefs = (...refs) => (el) => {
-    refs.forEach((ref) => {
-      if (typeof ref === "function") {
-        ref(el);
-      } else if (ref && typeof ref === "object") {
-        ref.current = el;
-      }
-    });
-  };
+  const mergeRefs =
+    (...refs) =>
+    (el) => {
+      refs.forEach((ref) => {
+        if (typeof ref === "function") {
+          ref(el);
+        } else if (ref && typeof ref === "object") {
+          ref.current = el;
+        }
+      });
+    };
 
   useEffect(() => {
     const revertFunctions = [];
@@ -162,7 +163,7 @@ const Work = () => {
           start: "top 85%",
           toggleActions: "play none none none",
           once: true,
-          pinSpacing: false, 
+          pinSpacing: false,
         },
       });
 
@@ -193,18 +194,27 @@ const Work = () => {
   useEffect(() => {
     ScrollTrigger.refresh();
   }, []);
-  
 
   return (
     <main className="size-container-ideal mt-[20vh]" id="work">
-      <h1
-        className="desktop:text-11xl tablet:text-10xl mobile:text-[3rem] font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex"
+      <div
         ref={mergeRefs(textFeaturedWorkRef, title)}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+        className="flex items-center flex-1 flex-wrap"
       >
-        <span className="font-kenoky ml-2">featured </span> work
+        <h1 className="desktop:text-11xl tablet:text-10xl mobile:text-7xl font-kenoky tracking-tighter uppercase leading-none">
+        featured 
       </h1>
-      <section ref={image} className="bg-[#131313] text-[#E2E1DF] px-5 pb-[30vh] overflow-hidden" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+      <h1 className="desktop:text-11xl tablet:text-10xl mobile:text-7xl font-geist-semibold tracking-tighter uppercase leading-none ml-2">
+        work
+      </h1>
+      </div>
+      
+      <section
+        ref={image}
+        className="bg-[#131313] text-[#E2E1DF] px-5 pb-[30vh] overflow-hidden"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+      >
         <section className="grid tablet:grid-cols-2 mobile:grid-cols-1 gap-3 mt-5 tablet:text-sm mobile:text-xs uppercase font-geist-medium">
           <div className="flex flex-col flex-1 flex-wrap">
             <p className="text-[#FF4C2F] leading-none">01</p>
@@ -213,7 +223,12 @@ const Work = () => {
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">booking iasi</p>
+              <p
+                ref={addToParagraphsRefs}
+                className="text-[#FF4C2F] leading-none"
+              >
+                booking iasi
+              </p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -238,7 +253,12 @@ const Work = () => {
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">realio - real estate</p>
+              <p
+                ref={addToParagraphsRefs}
+                className="text-[#FF4C2F] leading-none"
+              >
+                realio - real estate
+              </p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -254,14 +274,22 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-1 flex-wrap" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <div
+            className="flex flex-col flex-1 flex-wrap"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
             <p className="text-[#FF4C2F] leading-none">03</p>
 
             <div
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">meowseum</p>
+              <p
+                ref={addToParagraphsRefs}
+                className="text-[#FF4C2F] leading-none"
+              >
+                meowseum
+              </p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -286,7 +314,12 @@ const Work = () => {
               className="flex justify-between"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
             >
-              <p ref={addToParagraphsRefs} className="text-[#FF4C2F] leading-none">portfolio 24'</p>
+              <p
+                ref={addToParagraphsRefs}
+                className="text-[#FF4C2F] leading-none"
+              >
+                portfolio 24'
+              </p>
               <div
                 className="text-right leading-none mt-1"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}

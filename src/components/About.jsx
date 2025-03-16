@@ -42,7 +42,7 @@ const About = () => {
         {
           clipPath: "inset(0 0 0 0)",
           duration: 0.5,
-          delay: 0.5,
+          delay: 0.1,
           ease: "power4.inOut",
           scrollTrigger: {
             trigger: el,

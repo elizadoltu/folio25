@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <footer className="mt-[20vh]" id="contact">
       <section
-        className="uppercase mt-5 desktop:text-12xl tablet:text-10xl mobile:text-[2.8rem] flex leading-none flex-wrap flex-1 justify-between p-3"
+        className="uppercase mt-5 desktop:text-12xl tablet:text-10xl mobile:text-8xl flex leading-none flex-wrap flex-1 justify-between p-3"
         ref={titleRef}
       >
         <h1
@@ -142,11 +142,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <img
-          src={logoSrc}
-          alt="official logo website"
-          className="contact-image mobile:mt-20 tablet:mt-0 w-64 h-64"
-        />
+        <div className="flex justify-center items-center">
+          <img
+            src={logoSrc}
+            alt="official logo website"
+            className="contact-image mobile:mt-20 tablet:mt-0 w-64 h-64 "
+          />
+        </div>
       </section>
     </footer>
   );
