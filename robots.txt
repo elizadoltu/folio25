@@ -1,10 +1,3 @@
 User-agent: *
 Allow: /
-
-# Block specific folders (if any)
-Disallow: /private/
-Disallow: /temp/
-Disallow: /src/data/
-
-# Sitemap link
-Sitemap: https://elizadoltuofficial.net/sitemap.xml
+Sitemap: https://www.elizadoltuofficial.net/sitemap.xml
