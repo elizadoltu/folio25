@@ -23,7 +23,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://elizadoltuofficial.net" />
+    <meta property="og:url" content="https://www.elizadoltuofficial.net" />
     <meta
       property="og:title"
       content="Eliza Doltu | Web Developer & Designer"
@@ -34,12 +34,12 @@
     />
     <meta
       property="og:image"
-      content="https://elizadoltuofficial.net/profile-1.webp"
+      content="https://www.elizadoltuofficial.net/profile-1.webp"
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://elizadoltuofficial.net" />
+    <meta property="twitter:url" content="https://www.elizadoltuofficial.net" />
     <meta
       property="twitter:title"
       content="Eliza Doltu | Web Developer & Designer"
@@ -50,7 +50,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://elizadoltuofficial.net/profile-1.webp"
+      content="https://www.elizadoltuofficial.net/profile-1.webp"
     />
 
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -93,6 +93,82 @@
       crossorigin
     />
     <title>Eliza Doltu | Web Developer & Designer</title>
+    <script>
+      function addSchemaForPage() {
+        const pageSchemas = {
+          "/": {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Eliza Doltu | Web Developer & Designer",
+            "url": "https://www.elizadoltuofficial.net/",
+            "description": "Portfolio of Eliza Doltu, a creative web developer and designer crafting immersive digital experiences.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.elizadoltuofficial.net/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          "/projects/booking-iasi": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Booking Iași",
+            "applicationCategory": "BookingApplication",
+            "operatingSystem": "Web",
+            "description": "An intuitive and efficient booking system featuring user profile creation, 3D visualizations, and secure local deployment with Docker.",
+            "url": "https://www.elizadoltuofficial.net/projects/booking-iasi",
+            "author": {
+              "@type": "Person",
+              "name": "Eliza Doltu"
+            }
+          },
+          "/projects/realio-app": {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Realio App",
+            "applicationCategory": "PropertyManagementApplication",
+            "operatingSystem": "Web",
+            "description": "A smart property management platform utilizing machine learning for market insights, built with Angular and a secure .NET backend architecture.",
+            "url": "https://www.elizadoltuofficial.net/projects/realio-app",
+            "author": {
+              "@type": "Person",
+              "name": "Eliza Doltu"
+            }
+          },
+          "/projects/meowseum": {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Meowseum",
+            "url": "https://www.elizadoltuofficial.net/projects/meowseum",
+            "description": "An interactive platform celebrating feline photography with smooth animations, responsive design, and seamless user experience powered by React and GSAP.",
+            "author": {
+              "@type": "Person",
+              "name": "Eliza Doltu"
+            }
+          },
+          "/projects/portfolio-24": {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Portfolio 24 by Eliza Doltu",
+            "url": "https://www.elizadoltuofficial.net/projects/portfolio-24",
+            "description": "A personal website featuring smooth scrolling, dynamic animations, and an engaging design optimized for SEO and performance.",
+            "author": {
+              "@type": "Person",
+              "name": "Eliza Doltu"
+            }
+          }
+        };
+    
+        const path = window.location.pathname;
+        let schema = pageSchemas[path] || pageSchemas["/"];
+    
+        const script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(schema, null, 2);
+        document.head.appendChild(script);
+      }
+    
+      document.addEventListener("DOMContentLoaded", addSchemaForPage);
+    </script>  
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -113,82 +189,6 @@
     function gtag() { dataLayer.push(arguments); }
   </script>
   
-  <script>
-    function addSchemaForPage() {
-      const pageSchemas = {
-        "/": {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Eliza Doltu | Web Developer & Designer",
-          "url": "https://elizadoltuofficial.net/",
-          "description": "Portfolio of Eliza Doltu, a creative web developer and designer crafting immersive digital experiences.",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://elizadoltuofficial.net/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        "/projects/booking-iasi": {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Booking Iași",
-          "applicationCategory": "BookingApplication",
-          "operatingSystem": "Web",
-          "description": "An intuitive and efficient booking system featuring user profile creation, 3D visualizations, and secure local deployment with Docker.",
-          "url": "https://elizadoltuofficial.net/projects/booking-iasi",
-          "author": {
-            "@type": "Person",
-            "name": "Eliza Doltu"
-          }
-        },
-        "/projects/realio-app": {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Realio App",
-          "applicationCategory": "PropertyManagementApplication",
-          "operatingSystem": "Web",
-          "description": "A smart property management platform utilizing machine learning for market insights, built with Angular and a secure .NET backend architecture.",
-          "url": "https://elizadoltuofficial.net/projects/realio-app",
-          "author": {
-            "@type": "Person",
-            "name": "Eliza Doltu"
-          }
-        },
-        "/projects/meowseum": {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Meowseum",
-          "url": "https://elizadoltuofficial.net/projects/meowseum",
-          "description": "An interactive platform celebrating feline photography with smooth animations, responsive design, and seamless user experience powered by React and GSAP.",
-          "author": {
-            "@type": "Person",
-            "name": "Eliza Doltu"
-          }
-        },
-        "/projects/portfolio-24": {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Portfolio 24 by Eliza Doltu",
-          "url": "https://elizadoltuofficial.net/projects/portfolio-24",
-          "description": "A personal website featuring smooth scrolling, dynamic animations, and an engaging design optimized for SEO and performance.",
-          "author": {
-            "@type": "Person",
-            "name": "Eliza Doltu"
-          }
-        }
-      };
-  
-      const path = window.location.pathname;
-      let schema = pageSchemas[path] || pageSchemas["/"];
-  
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(schema, null, 2);
-      document.head.appendChild(script);
-    }
-  
-    document.addEventListener("DOMContentLoaded", addSchemaForPage);
-  </script>  
 
   <body>
     <div id="root"></div>
