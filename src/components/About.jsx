@@ -3,7 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { bouncy } from "ldrs";
-const Contact = lazy(() => import('../components/Contact'));
+const Contact = lazy(() => import("../components/Contact"));
 
 gsap.registerPlugin(ScrollTrigger);
 bouncy.register();
@@ -247,35 +247,71 @@ const About = () => {
           >
             <span className="font-kenoky">who</span> am i?
           </h2>
-          <p className=" text-sm tablet:max-w-2xl mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            I'm Eliza, a Computer Science student at Alexandru Ioan
-            Cuza University, driven by <span className="italic font-geist-regular underline">creativity and a passion</span> for blending
-            design with technology. As a <span className="italic font-geist-regular underline">web developer and designer</span>, I love
-            bringing ideas to life through code and motion.
+          <p
+            className=" text-sm tablet:max-w-2xl mt-4"
+            ref={addToParagraphsRefs}
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
+            I'm Eliza, a Computer Science student at Alexandru Ioan Cuza
+            University, driven by{" "}
+            <span className="italic font-geist-regular underline">
+              creativity and a passion
+            </span>{" "}
+            for blending design with technology. As a{" "}
+            <span className="italic font-geist-regular underline">
+              web developer and designer
+            </span>
+            , I love bringing ideas to life through code and motion.
           </p>
-          <p className="tablet:max-w-xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <p
+            className="tablet:max-w-xl text-sm mt-4"
+            ref={addToParagraphsRefs}
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
             Movement, both in design and life, keeps me inspired—whether it’s
-            <span className="font-geist-regular italic underline"> skiing, football, or simply staying active.</span> I believe that staying
-            energized and adaptable in all aspects of life fuels my creativity
-            and approach to problem-solving.
+            <span className="font-geist-regular italic underline">
+              {" "}
+              skiing, football, or simply staying active.
+            </span>{" "}
+            I believe that staying energized and adaptable in all aspects of
+            life fuels my creativity and approach to problem-solving.
           </p>
-          <p className="tablet:max-w-2xl text-sm mt-4" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
-            A huge sci-fi fan, I draw inspiration from <span className="italic font-geist-regular underline">Dune and Star Wars, </span> fascinated by 
-            their world-building and futuristic ideas. Just as
+          <p
+            className="tablet:max-w-2xl text-sm mt-4"
+            ref={addToParagraphsRefs}
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
+            A huge sci-fi fan, I draw inspiration from{" "}
+            <span className="italic font-geist-regular underline">
+              Dune and Star Wars,{" "}
+            </span>{" "}
+            fascinated by their world-building and futuristic ideas. Just as
             these stories push creative boundaries, I strive to craft digital
-            experiences that captivate and inspire. I thrive in <span className="italic font-geist-regular underline">dynamic
-            environments, always eager to learn, adapt, and innovate</span> in the
-            ever-evolving world of technology.
+            experiences that captivate and inspire. I thrive in{" "}
+            <span className="italic font-geist-regular underline">
+              dynamic environments, always eager to learn, adapt, and innovate
+            </span>{" "}
+            in the ever-evolving world of technology.
           </p>
         </section>
       </section>
 
       <div className="uppercase mt-[10vh] tablet:flex gap-10 text-base font-geist-semibold">
         <div>
-          <h3 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <h3
+            className="underline"
+            ref={addToParagraphsRefs}
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
             honors & awards
           </h3>
-          <div className="mt-5 leading-none uppercase" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <div
+            className="mt-5 leading-none uppercase"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
+            <p ref={addToParagraphsRefs}>
+              site of the day - css winner &#40;2025&#41;
+            </p>
             <p ref={addToParagraphsRefs}>
               young jury - awwwards &#40;2025&#41;
             </p>
@@ -286,7 +322,11 @@ const About = () => {
           </div>
         </div>
         <div className="mobile:mt-10 tablet:mt-0">
-          <h3 className="underline" ref={addToParagraphsRefs} style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
+          <h3
+            className="underline"
+            ref={addToParagraphsRefs}
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+          >
             skills
           </h3>
           <div className="flex gap-5 leading-none mt-5">
@@ -306,10 +346,16 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div className="w-full h-screen flex flex-col justify-center items-center bg-[#131313] text-[#e2e1df] uppercase font-geist-medium"><h4 className="mb-5">Loading</h4><l-bouncy size="45" speed="1.75" color="white"></l-bouncy></div>}>
-  <Contact />
-</Suspense>
-
+      <Suspense
+        fallback={
+          <div className="w-full h-screen flex flex-col justify-center items-center bg-[#131313] text-[#e2e1df] uppercase font-geist-medium">
+            <h4 className="mb-5">Loading</h4>
+            <l-bouncy size="45" speed="1.75" color="white"></l-bouncy>
+          </div>
+        }
+      >
+        <Contact />
+      </Suspense>
     </main>
   );
 };

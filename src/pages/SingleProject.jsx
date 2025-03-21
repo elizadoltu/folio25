@@ -11,6 +11,7 @@ import SplitType from "split-type";
 import AvailableAt from "../components/AvailableAt";
 import Gallery from "../components/Gallery";
 import { bouncy } from "ldrs";
+import CaseStudy from "../components/CaseStudy";
 
 const NotFound = lazy(() => import("./NotFound"));
 gsap.registerPlugin(ScrollTrigger);
@@ -181,7 +182,7 @@ function SingleProject() {
             >
               {project.projectDate}
             </p>
-            <div className="tablet:w-xl mobile:w-full text-sm font-geist-medium">
+            <div className="tablet:w-xl text-sm font-geist-medium">
               <p
                 ref={addToParagraphsRefs}
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
@@ -202,8 +203,10 @@ function SingleProject() {
             alt={project.projectFirstName}
             className="mt-12 w-full p-3"
           />
-          <section className="mt-5 border-t-gray-400 border-b-gray-400 py-5 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium p-3">
-            <p className="uppercase">technologies used</p>
+          <section className="mt-5 border-t-gray-400 border-b-gray-400 py-7 leading-none border-t-1 border-b-1 flex mobile:flex-col tablet:flex-row justify-between font-geist-medium ml-3 mr-3">
+            <div> <p className="uppercase font-geist-semibold tablet:text-5xl mobile:text-4xl tracking-tighter">technologies used</p>
+            <p className="font-geist-medium text-sm mt-2 tablet:w-lg">An overview of the key technologies used to bring these projects to life—highlighting the tools and frameworks that shaped the design and functionality.</p></div>
+           
             <div className="grid grid-rows-2 grid-cols-2 gap-8 uppercase tablet:text-base leading-none mobile:mt-5 tablet:mt-0">
               <div>
                 <p>frontend</p>
@@ -237,7 +240,11 @@ function SingleProject() {
               </div>
             </div>
           </section>
-          <p className="uppercase mt-5 font-geist-medium p-3">gallery</p>
+          <CaseStudy />
+          <div><p className="uppercase font-geist-semibold text-5xl tracking-tighter p-3">gallery</p>
+            <p className="font-geist-medium text-sm px-3 tablet:w-lg mt-2">A visual journey through the project gallery—showcasing creative highlights and design elements that define each experience.</p>
+          </div>
+          
           <Gallery />
         </section>
 

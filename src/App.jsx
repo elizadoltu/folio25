@@ -1,7 +1,10 @@
-import React, { useEffect, lazy, Suspense, useState } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import "./index.css";
 import "./global/geist.css";
 import "./global/kenoky.css";
+import "./global/general-sans.css";
+import "./global/switzer.css";
+import "./global/dirtyline.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lenis from 'lenis';
 import gsap from 'gsap';

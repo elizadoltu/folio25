@@ -50,7 +50,15 @@ const projectsData = [
       design: "Figma",
       linkDesign: "https://www.figma.com/design/dQbhAKhZoPeAJJ9U2W6lzW/IP?node-id=0-1&t=hsEHdJ6v6qCQbWWd-1",
       code: "Github",
-      linkCode: "https://github.com/vladsuper5555/BookingIasi"
+      linkCode: "https://github.com/vladsuper5555/BookingIasi",
+      color1: "#F5F5F5",
+      color2: "#18181A",
+      color3: '#E7E7E7',
+      color4: '#005FB7',
+      mainFont: 'Montserrat',
+      fontName: 'Montserrat',
+      fontFamily: '"Montserrat", sans-serif',
+      fontWeights: [200, 400, 600, 800]
     },
     {
       "projectFirstName": "Realio",
@@ -71,7 +79,16 @@ const projectsData = [
       design: "Figma",
       linkDesign: "https://www.figma.com/design/CcpX9vAb0Bcfla0Y2pgcWG/Real-Estate-Management-App?node-id=0-1&t=437GkMT5UTAGGixb-1",
       code: "Github",
-      linkCode: "https://github.com/elizadoltu/realio-real-estate-platform"
+      linkCode: "https://github.com/elizadoltu/realio-real-estate-platform",
+      color2: "#181818",
+      color1: "#F6F6F6",
+      color3: '#D9D9D9',
+      color4: '#BBBBBB',
+      mainFont: 'GeneralSans-Regular',
+      secondFont: 'Switzer-Regular',
+      secondFontName: 'Switzer',
+      fontName: 'General Sans',
+      fontWeights: [400, 800]
     },
     {
       "projectFirstName": "Meowseum",
@@ -92,7 +109,16 @@ const projectsData = [
       design: "Live",
       linkDesign: "https://www.themeowseum.com",
       code: "Github",
-      linkCode: "https://github.com/elizadoltu/meowseum"
+      linkCode: "https://github.com/elizadoltu/meowseum",
+      color2: "#050505",
+      color1: "#DBDBDB",
+      color3: '#FF6500',
+      color4: '#16423C',
+      mainFont: 'GeneralSans-Regular',
+      secondFont: 'Dirtyline',
+      secondFontName: 'Dirtyline',
+      fontName: 'General Sans',
+      fontWeights: [400, 800]
     },
     {
       "projectFirstName": "Portfolio",
@@ -113,7 +139,16 @@ const projectsData = [
       liveAt: 'live',
       linkDesign: "https://cerulean-rugelach-60baac.netlify.app/",
       code: "Github",
-      linkCode: "https://github.com/elizadoltu/portfolio"
+      linkCode: "https://github.com/elizadoltu/portfolio",
+      color1: "#131313",
+      color2: "#d6d6d6",
+      color3: "#7C7C7C",
+      color4: "#ff0900",
+      fontName: 'Urbanist',
+      secondFont: 'GeneralSans-Regular',
+      secondFontName: 'General Sans',
+      mainFont: '"Urbanist", sans-serif',
+      fontWeights: [400, 800]
     }
   ]
 

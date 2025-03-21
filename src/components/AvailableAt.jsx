@@ -188,13 +188,18 @@ const AvailableAt = () => {
 
   return (
     <main className="mt-[20vh] size-container-ideal" id="available-at">
-      <h1
-        className="desktop:text-11xl tablet:text-10xl mobile:text-5xl font-geist-semibold tracking-tighter uppercase leading-none flex-1 flex-wrap flex items-center"
+      <div
         ref={mergeRefs(textFeaturedWorkRef, title)}
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+        className="flex items-center flex-1 flex-wrap"
       >
-        <span className="font-kenoky mr-2">Available </span> at
+        <h1 className="desktop:text-11xl tablet:text-10xl mobile:text-6xl font-kenoky tracking-tighter uppercase leading-none">
+        available
       </h1>
+      <h1 className="desktop:text-11xl tablet:text-10xl mobile:text-6xl font-geist-semibold tracking-tighter uppercase leading-none ml-2">
+        at
+      </h1>
+      </div>
       <section className="size-container-ideal bg-[#131313] text-[#e2e1df]">
         <div className="grid tablet:grid-cols-2 gap-3 mt-5 text-sm uppercase font-geist-medium p-3">
           <div className="flex flex-col flex-1 flex-wrap">
