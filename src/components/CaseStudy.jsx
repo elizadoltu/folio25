@@ -12,7 +12,7 @@ const CaseStudy = () => {
     <section className="border-b-1 border-b-gray-400 px-3 py-7 w-full">
       <div className="flex mobile:flex-col tablet:flex-row w-full justify-between items-start">
         <div className="tablet:max-w-lg flex flex-col">
-          <h2 className="uppercase font-geist-semibold text-5xl tracking-tighter">fonts & colours</h2>
+          <h2 className="uppercase font-geist-semibold text-5xl tracking-tighter">fonts & colors</h2>
           <p className="font-geist-medium text-sm mt-2">
             Exploring the impact of fonts and colors in web design: A deep dive
             into case studies that highlight how typography and color choices
@@ -21,7 +21,7 @@ const CaseStudy = () => {
         </div>
         <div className="leading-none tablet:w-5xl mobile:w-full flex flex-col justify-end mobile:mt-10 tablet:mt-0">
           <p className="uppercase font-geist-semibold text-5xl tracking-tighter leading-none">
-            colours
+            colors
           </p>
           <div className="grid tablet:grid-cols-2 mobile:grid-cols-1 mt-2 gap-4">
             <div
