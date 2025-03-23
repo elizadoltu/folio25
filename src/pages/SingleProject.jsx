@@ -242,7 +242,7 @@ function SingleProject() {
           </section>
           <CaseStudy />
           <div><p className="uppercase font-geist-semibold text-5xl tracking-tighter p-3">gallery</p>
-            <p className="font-geist-medium text-sm px-3 tablet:w-lg mt-2">A visual journey through the project gallery—showcasing creative highlights and design elements that define each experience.</p>
+            <p className="font-geist-medium text-sm px-3 tablet:w-lg">A visual journey through the project gallery—showcasing creative highlights and design elements that define each experience.</p>
           </div>
           
           <Gallery />
