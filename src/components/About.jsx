@@ -310,13 +310,16 @@ const About = () => {
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             <p ref={addToParagraphsRefs}>
-              site of the day - css winner &#40;2025&#41;
+              site of the day - portfolio 25' &#40;css winner - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
+              honors - the meowseum &#40;awwwards - 2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
               young jury - awwwards &#40;2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
-              honors - portfolio 24' &#40;2024&#41;
+              honors - portfolio 24' &#40;awwwards - 2024&#41;
             </p>
             <p ref={addToParagraphsRefs}>judge awards - ftc &#40;2019&#41;</p>
           </div>
