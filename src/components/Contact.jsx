@@ -129,7 +129,7 @@ const Contact = () => {
               </p>
 
               <p>
-                <AnimatedButton text="+40732134019" href="tel:+40732134019" />
+                <AnimatedButton text="github" href="https://github.com/elizadoltu" />
               </p>
             </div>
             <div className="social__column">
