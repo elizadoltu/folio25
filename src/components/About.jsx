@@ -313,6 +313,9 @@ const About = () => {
               site of the day - portfolio 25' &#40;css winner - 2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
+              honors - portfolio 25' &#40;awwwards - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
               honors - the meowseum &#40;awwwards - 2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
