@@ -342,12 +342,18 @@ const About = () => {
               <p ref={addToParagraphsRefs}>tailwind css</p>
               <p ref={addToParagraphsRefs}>gsap</p>
               <p ref={addToParagraphsRefs}>figma</p>
+              <p ref={addToParagraphsRefs}>javascript</p>
+              <p ref={addToParagraphsRefs}>typescript</p>
+              <p ref={addToParagraphsRefs}>html</p>
+              <p ref={addToParagraphsRefs}>css</p>
             </div>
             <div>
               <p ref={addToParagraphsRefs}>nodejs</p>
               <p ref={addToParagraphsRefs}>expressjs</p>
               <p ref={addToParagraphsRefs}>python</p>
               <p ref={addToParagraphsRefs}>mongodb</p>
+              <p ref={addToParagraphsRefs}>.net</p>
+              <p ref={addToParagraphsRefs}>c++</p>
             </div>
           </div>
         </div>
