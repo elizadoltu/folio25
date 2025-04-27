@@ -310,6 +310,9 @@ const About = () => {
             style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
           >
             <p ref={addToParagraphsRefs}>
+              jury - orpetron &#40;2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
               site of the day - portfolio 25' &#40;css winner - 2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
