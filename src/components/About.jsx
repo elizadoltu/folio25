@@ -322,6 +322,18 @@ const About = () => {
               honors - the meowseum &#40;awwwards - 2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
+              nominee typography honors - the meowseum &#40;awwwards - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
+              featured - x2 &#40;footer.design - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
+              featured - x1 &#40;muzli - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
+              featured - x1 &#40;schema.supply - 2025&#41;
+            </p>
+            <p ref={addToParagraphsRefs}>
               young jury - awwwards &#40;2025&#41;
             </p>
             <p ref={addToParagraphsRefs}>
