@@ -124,7 +124,7 @@ const Contact = () => {
               <p>
                 <AnimatedButton
                   text="email"
-                  href="mailto:contact@elizadoltuofficial.net"
+                  href="mailto:elizadoltuofficial@gmail.com"
                 />
               </p>
 
